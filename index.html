@@ -1,22 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Forces Academy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forces Academy Faisalabad</title>
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet" />
+
+  <!-- Custom CSS (always AFTER Bootstrap) -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-    <div class="container mt-5 text-center">
-        <h1>Welcome to Forces Academy</h1>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark" id="mainNav">
+    <div class="container">
+
+      <a class="navbar-brand fw-bold" href="index.html">Forces Academy</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="courses.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admissions.html">Admissions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="results.html">Results</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-portal fw-semibold px-3 ms-lg-2" href="#">
+              Student Portal
+            </a>
+          </li>
+        </ul>
+      </div>
+
     </div>
+  </nav>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <div class="row align-items-center gy-5">
 
+        <!-- Left: Text -->
+        <div class="col-lg-6 text-white">
+
+          <span class="hero-eyebrow">Forces Academy Faisalabad</span>
+
+          <h1 class="display-5 fw-bold mb-3 mt-2">
+            Excellence in Education, Built for Tomorrow's Leaders
+          </h1>
+
+          <p class="lead mb-4">
+            A disciplined, modern learning environment where every student is guided
+            toward academic excellence and strong character.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="admissions.html" class="btn btn-portal btn-lg fw-semibold px-4">
+              Apply Now
+            </a>
+            <a href="about.html" class="btn btn-outline-light btn-lg px-4">
+              Learn More
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Image -->
+        <div class="col-lg-6">
+          <div class="hero-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1758612898701-e2f2958f219d?fm=jpg&q=80&w=1200&auto=format&fit=crop"
+              alt="Student studying at Forces Academy"
+              class="hero-image" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
 </body>
 </html>
