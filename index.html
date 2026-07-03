@@ -10,14 +10,20 @@
     rel="stylesheet" />
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <!-- Custom CSS (always AFTER Bootstrap) -->
-  <<link rel="stylesheet" href="CSS/style.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top navbar-dark" id="mainNav">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">Forces Academy</a>
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-shield-fill-check me-2"></i>Forces Academy
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -32,9 +38,6 @@
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="courses.html">Courses</a>
@@ -52,6 +55,9 @@
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
             <a class="btn btn-portal fw-semibold px-3 ms-lg-2" href="#">
               Student Portal
             </a>
@@ -63,17 +69,19 @@
 
   <!-- Hero Section -->
   <section id="hero">
-    <div class="container">
+    <div class="hero-pattern"></div>
+    <div class="container position-relative">
       <div class="row align-items-center gy-5">
         <!-- Left: Text -->
         <div class="col-lg-6 text-white">
           <span class="hero-eyebrow">Forces Academy Faisalabad</span>
-          <h1 class="display-5 fw-bold mb-3 mt-2">
-            Excellence in Education, Built for Tomorrow's Leaders
+          <h1 class="display-4 fw-bold mb-3 mt-3">
+            Your Gateway to a Career in the Armed Forces
           </h1>
           <p class="lead mb-4">
-            A disciplined, modern learning environment where every student is guided
-            toward academic excellence and strong character.
+            Complete preparation for Army, Air Force &amp; Navy selection &mdash;
+            written tests, physical training, and ISSB interview grooming
+            under expert guidance.
           </p>
           <div class="d-flex flex-wrap gap-3">
             <a href="admissions.html" class="btn btn-portal btn-lg fw-semibold px-4">
@@ -88,9 +96,13 @@
         <div class="col-lg-6">
           <div class="hero-image-wrap">
             <img
-              src="https://images.unsplash.com/photo-1758612898701-e2f2958f219d?fm=jpg&q=80&w=1200&auto=format&fit=crop"
-              alt="Student studying at Forces Academy"
+              src="https://images.unsplash.com/photo-1502904550040-7534597429ae?fm=jpg&q=80&w=1200&auto=format&fit=crop"
+              alt="Cadets in disciplined running formation"
               class="hero-image" />
+            <div class="hero-badge">
+              <span class="hero-badge-num">15+</span>
+              <span class="hero-badge-label">Years of<br>Excellence</span>
+            </div>
           </div>
         </div>
       </div>
@@ -98,7 +110,7 @@
   </section>
 
   <!-- Stats Strip -->
-  <section id="stats" class="py-4">
+  <section id="stats" class="py-5">
     <div class="container">
       <div class="row text-center gy-4">
         <div class="col-6 col-md-3">
@@ -107,38 +119,41 @@
         </div>
         <div class="col-6 col-md-3">
           <h2 class="stat-number fw-bold mb-0">2,500+</h2>
-          <p class="stat-label mb-0">Students Enrolled</p>
+          <p class="stat-label mb-0">Cadets Trained</p>
         </div>
         <div class="col-6 col-md-3">
           <h2 class="stat-number fw-bold mb-0">98%</h2>
-          <p class="stat-label mb-0">Pass Rate</p>
+          <p class="stat-label mb-0">Selection Rate</p>
         </div>
         <div class="col-6 col-md-3">
           <h2 class="stat-number fw-bold mb-0">60+</h2>
-          <p class="stat-label mb-0">Expert Faculty</p>
+          <p class="stat-label mb-0">Expert Instructors</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Preview -->
-  <section id="about-preview" class="py-5">
+  <section id="about-preview" class="py-6">
     <div class="container">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6">
-          <img
-            src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?fm=jpg&q=80&w=1000&auto=format&fit=crop"
-            alt="Forces Academy campus"
-            class="img-fluid rounded-4 shadow section-image" />
+          <div class="about-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?fm=jpg&q=80&w=1000&auto=format&fit=crop"
+              alt="Forces Academy campus"
+              class="img-fluid rounded-4 section-image" />
+          </div>
         </div>
         <div class="col-lg-6">
           <span class="section-eyebrow">About Us</span>
           <h2 class="fw-bold mb-3 mt-2">A Legacy of Discipline &amp; Distinction</h2>
           <p class="mb-4">
-            Forces Academy Faisalabad blends academic rigor with strong values,
-            preparing students not just for exams, but for life. Our experienced
-            faculty and structured environment help every student reach their
-            full potential.
+            Forces Academy Faisalabad prepares aspiring cadets for careers in
+            the Pakistan Army, Air Force, and Navy through rigorous written
+            test coaching, physical conditioning, and ISSB interview
+            training. Our experienced instructors and disciplined
+            environment help every candidate reach their full potential.
           </p>
           <a href="about.html" class="btn btn-portal fw-semibold px-4">
             Read More
@@ -149,10 +164,10 @@
   </section>
 
   <!-- Why Choose Us -->
-  <section id="features" class="py-5">
+  <section id="features" class="py-6">
     <div class="container">
       <div class="text-center mb-5">
-        <span class="section-eyebrow">Why Choose Us</span>
+        <span class="section-eyebrow justify-content-center">Why Choose Us</span>
         <h2 class="fw-bold mt-2">What Sets Us Apart</h2>
       </div>
       <div class="row g-4">
@@ -161,20 +176,22 @@
             <div class="feature-icon mb-3">
               <i class="bi bi-mortarboard-fill"></i>
             </div>
-            <h5 class="fw-bold mb-2">Expert Faculty</h5>
+            <h5 class="fw-bold mb-2">Expert Instructors</h5>
             <p class="mb-0">
-              Highly qualified teachers dedicated to student success at every level.
+              Experienced faculty specializing in Army, Navy &amp; Air Force
+              test patterns and ISSB requirements.
             </p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="feature-card h-100 p-4 rounded-4">
             <div class="feature-icon mb-3">
-              <i class="bi bi-shield-check"></i>
+              <i class="bi bi-lightning-charge-fill"></i>
             </div>
-            <h5 class="fw-bold mb-2">Disciplined Environment</h5>
+            <h5 class="fw-bold mb-2">Physical &amp; Mental Conditioning</h5>
             <p class="mb-0">
-              A structured, safe, and focused campus culture built on strong values.
+              Structured PT sessions and discipline-focused training built
+              for defence force standards.
             </p>
           </div>
         </div>
@@ -183,9 +200,10 @@
             <div class="feature-icon mb-3">
               <i class="bi bi-graph-up-arrow"></i>
             </div>
-            <h5 class="fw-bold mb-2">Proven Results</h5>
+            <h5 class="fw-bold mb-2">Proven Selection Results</h5>
             <p class="mb-0">
-              Consistent top academic results and strong board exam performance.
+              A consistent track record of successful selections across all
+              three services.
             </p>
           </div>
         </div>
@@ -194,48 +212,57 @@
   </section>
 
   <!-- Courses Preview -->
-  <section id="courses-preview" class="py-5">
+  <section id="courses-preview" class="py-6">
     <div class="container">
       <div class="text-center mb-5">
-        <span class="section-eyebrow">Programs</span>
-        <h2 class="fw-bold mt-2">Our Courses</h2>
+        <span class="section-eyebrow justify-content-center">Programs</span>
+        <h2 class="fw-bold mt-2">Our Training Programs</h2>
       </div>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="course-card h-100 rounded-4 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fm=jpg&q=80&w=800&auto=format&fit=crop"
-              alt="Matriculation program"
-              class="w-100 course-img" />
+            <div class="course-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fm=jpg&q=80&w=800&auto=format&fit=crop"
+                alt="Written test preparation"
+                class="w-100 course-img" />
+              <span class="course-tag">Written Test</span>
+            </div>
             <div class="p-4">
-              <h5 class="fw-bold mb-2">Matriculation</h5>
-              <p class="mb-3">Science &amp; Arts groups with focused board exam prep.</p>
+              <h5 class="fw-bold mb-2">Written Test Preparation</h5>
+              <p class="mb-3">Math, English &amp; Intelligence (IQ) coaching for Army, Navy &amp; PAF entry tests.</p>
               <a href="courses.html" class="btn btn-outline-portal btn-sm">View Details</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="course-card h-100 rounded-4 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?fm=jpg&q=80&w=800&auto=format&fit=crop"
-              alt="Intermediate program"
-              class="w-100 course-img" />
+            <div class="course-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1502904550040-7534597429ae?fm=jpg&q=80&w=800&auto=format&fit=crop"
+                alt="Physical training"
+                class="w-100 course-img" />
+              <span class="course-tag">PT</span>
+            </div>
             <div class="p-4">
-              <h5 class="fw-bold mb-2">Intermediate</h5>
-              <p class="mb-3">Pre-Medical, Pre-Engineering &amp; Commerce streams.</p>
+              <h5 class="fw-bold mb-2">Physical Training</h5>
+              <p class="mb-3">Structured fitness, running &amp; endurance training to meet defence force standards.</p>
               <a href="courses.html" class="btn btn-outline-portal btn-sm">View Details</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="course-card h-100 rounded-4 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fm=jpg&q=80&w=800&auto=format&fit=crop"
-              alt="Entry test prep program"
-              class="w-100 course-img" />
+            <div class="course-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fm=jpg&q=80&w=800&auto=format&fit=crop"
+                alt="ISSB and interview preparation"
+                class="w-100 course-img" />
+              <span class="course-tag">ISSB</span>
+            </div>
             <div class="p-4">
-              <h5 class="fw-bold mb-2">Entry Test Prep</h5>
-              <p class="mb-3">MDCAT, ECAT &amp; NUMS preparation with expert guidance.</p>
+              <h5 class="fw-bold mb-2">ISSB &amp; Interview Prep</h5>
+              <p class="mb-3">Psychological tests, group tasks &amp; personality grooming for the interview stage.</p>
               <a href="courses.html" class="btn btn-outline-portal btn-sm">View Details</a>
             </div>
           </div>
@@ -245,10 +272,11 @@
   </section>
 
   <!-- CTA Banner -->
-  <section id="cta" class="py-5 text-center text-white">
+  <section id="cta" class="py-6 text-center text-white">
     <div class="container">
-      <h2 class="fw-bold mb-3">Ready to Begin Your Journey?</h2>
-      <p class="lead mb-4">Admissions are now open for the upcoming session.</p>
+      <span class="section-eyebrow justify-content-center cta-eyebrow">Admissions Open</span>
+      <h2 class="fw-bold mb-3 mt-2">Ready to Serve Your Nation?</h2>
+      <p class="lead mb-4">Admissions are now open for the upcoming batch.</p>
       <a href="admissions.html" class="btn btn-light btn-lg fw-semibold px-4">
         Apply Now
       </a>
@@ -256,23 +284,25 @@
   </section>
 
   <!-- Footer -->
-  <footer id="site-footer" class="py-5 text-white">
+  <footer id="site-footer" class="pt-5 pb-4 text-white">
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-4">
-          <h5 class="fw-bold mb-3">Forces Academy</h5>
+          <h5 class="fw-bold mb-3">
+            <i class="bi bi-shield-fill-check me-2"></i>Forces Academy
+          </h5>
           <p class="mb-0">
-            Excellence in education, built for tomorrow's leaders. Faisalabad's
-            trusted name in disciplined, quality learning.
+            Preparing Faisalabad's future defenders &mdash; written tests, physical
+            training, and ISSB interview coaching under one roof.
           </p>
         </div>
         <div class="col-lg-2 col-md-4">
           <h6 class="fw-bold mb-3">Quick Links</h6>
           <ul class="list-unstyled footer-links">
-            <li><a href="about.html">About</a></li>
             <li><a href="courses.html">Courses</a></li>
             <li><a href="admissions.html">Admissions</a></li>
             <li><a href="results.html">Results</a></li>
+            <li><a href="about.html">About</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-4">
