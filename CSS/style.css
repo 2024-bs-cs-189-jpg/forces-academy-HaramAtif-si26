@@ -533,3 +533,168 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.7rem 0.9rem;
   }
 }
+
+/* ---------- Team Cards (About page) ---------- */
+.team-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(7, 51, 31, 0.12);
+}
+
+/* Updated: now used on an <img> tag instead of a div+icon */
+.team-photo-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid var(--fa-gold);
+  margin: 0 auto 1rem;
+  display: block;
+  object-fit: cover;
+}
+
+.team-title {
+  color: var(--fa-gold-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- Mission / Vision panels ---------- */
+.mv-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--fa-gold);
+}
+
+.mv-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background-color: var(--fa-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.mv-icon i {
+  font-size: 1.5rem;
+  color: var(--fa-gold);
+}
+
+/* =========================================================
+   Courses & Admissions pages
+   ========================================================= */
+
+/* ---------- Numbered "How to Apply" steps ---------- */
+.apply-step {
+  border: none !important;
+  border-bottom: 1px solid rgba(7, 51, 31, 0.08) !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 0.5rem;
+  background-color: transparent !important;
+}
+
+.apply-step:last-child {
+  border-bottom: none !important;
+}
+
+.apply-step-num {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--fa-green);
+  color: var(--fa-gold);
+  font-family: var(--font-display);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Eligibility cards ---------- */
+.eligibility-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--fa-green);
+}
+
+.eligibility-card h5 {
+  color: var(--fa-green-dark);
+}
+
+/* ---------- Required documents checklist ---------- */
+.doc-list .list-group-item {
+  border: none;
+  border-bottom: 1px solid rgba(7, 51, 31, 0.08);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0.25rem;
+}
+
+.doc-list .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.doc-list i {
+  color: var(--fa-gold-dark);
+  font-size: 1.15rem;
+}
+
+/* ---------- Fee structure table ---------- */
+.fee-table {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.fee-table thead {
+  background-color: var(--fa-green-dark);
+}
+
+.fee-table thead th {
+  color: #ffffff !important;
+  background-color: var(--fa-green-dark) !important;
+  font-weight: 600;
+  border: none;
+  padding: 1rem;
+}
+
+/* FIX: force visible dark text on white cells — overrides any
+   Bootstrap utility classes (e.g. text-white / table-dark) that
+   were making the body text invisible on the white background */
+.fee-table tbody tr,
+.fee-table tbody td,
+.fee-table tbody th {
+  background-color: #ffffff !important;
+  color: var(--fa-ink) !important;
+}
+
+.fee-table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.fee-table tbody tr:hover,
+.fee-table tbody tr:hover td {
+  background-color: rgba(217, 164, 65, 0.08) !important;
+}
