@@ -599,16 +599,20 @@ h1, h2, h3, h4, h5, h6 {
 /* ---------- Numbered "How to Apply" steps ---------- */
 .apply-step {
   border: none !important;
-  border-bottom: 1px solid rgba(7, 51, 31, 0.08) !important;
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.1rem 0.5rem;
+  gap: 1.25rem;
+  padding: 1.1rem 0.85rem;
   background-color: transparent !important;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.apply-step:last-child {
-  border-bottom: none !important;
+.apply-step:hover {
+  background-color: rgba(217, 164, 65, 0.1) !important;
+  transform: translateX(4px);
 }
 
 .apply-step-num {
@@ -623,6 +627,10 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+  border: 3px solid var(--fa-cream);
+  box-shadow: 0 2px 8px rgba(7, 51, 31, 0.2);
 }
 
 /* ---------- Eligibility cards ---------- */
