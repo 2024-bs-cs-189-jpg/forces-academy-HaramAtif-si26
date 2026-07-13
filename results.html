@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results | Forces Academy Faisalabad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-shield-fill-check me-2"></i>Forces Academy
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="results.html">Results</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-portal fw-semibold px-3 ms-lg-2" href="#">Student Portal</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="page-banner" class="text-center text-white">
+    <div class="page-banner-bg"></div>
+    <div class="container position-relative">
+      <div class="page-banner-icon mb-3"><i class="bi bi-award-fill"></i></div>
+      <h1 class="fw-bold">Results</h1>
+      <div class="page-banner-divider"></div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 mt-3">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Results</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <main class="page-content">
+
+    <section id="results-intro" class="py-6 pb-0">
+      <div class="container text-center">
+        <span class="section-eyebrow justify-content-center">Our Achievers</span>
+        <h2 class="fw-bold mt-2 mb-3">Student Selection Results</h2>
+        <p class="mx-auto" style="max-width: 720px;">
+          We take pride in every candidate who passes through Forces Academy
+          Faisalabad. Below is a record of recent student outcomes across our
+          written test, academic, and ISSB preparation programs. Use the
+          filters to search by course, batch, or selection status.
+        </p>
+      </div>
+    </section>
+
+    <section id="results-filter" class="py-6">
+      <div class="container">
+        <div class="results-filter-bar">
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label for="searchInput" class="form-label">Search by Name / Roll No.</label>
+              <input type="text" id="searchInput" class="form-control" placeholder="e.g. Ahmed Raza or FA24-101" />
+            </div>
+            <div class="col-md-3 col-6">
+              <label for="courseFilter" class="form-label">Course</label>
+              <select id="courseFilter" class="form-select">
+                <option value="all">All Courses</option>
+                <option value="matric-science">Matric Science</option>
+                <option value="matric-arts">Matric Arts</option>
+                <option value="fsc-pre-medical">FSc Pre-Medical</option>
+                <option value="fsc-pre-engineering">FSc Pre-Engineering</option>
+                <option value="entry-test-prep">Entry Test Preparation</option>
+                <option value="issb-interview-prep">ISSB &amp; Interview Prep</option>
+              </select>
+            </div>
+            <div class="col-md-2 col-6">
+              <label for="yearFilter" class="form-label">Batch Year</label>
+              <select id="yearFilter" class="form-select">
+                <option value="all">All Years</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+              </select>
+            </div>
+            <div class="col-md-2 col-6">
+              <label for="statusFilter" class="form-label">Status</label>
+              <select id="statusFilter" class="form-select">
+                <option value="all">All Statuses</option>
+                <option value="selected">Selected</option>
+                <option value="qualified">Qualified</option>
+                <option value="in-process">In Process</option>
+                <option value="not-selected">Not Selected</option>
+              </select>
+            </div>
+            <div class="col-md-1 col-6">
+              <button type="button" id="resetFilters" class="btn btn-reset-filters w-100" title="Reset Filters">
+                <i class="bi bi-arrow-counterclockwise"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results-table-section" class="py-6 pt-0" style="background-color:#ffffff;">
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table fee-table results-table mb-0">
+            <thead>
+              <tr>
+                <th>Roll No.</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Batch Year</th>
+                <th>Result / Status</th>
+              </tr>
+            </thead>
+            <tbody id="resultsTableBody">
+              <tr data-course="fsc-pre-medical" data-year="2024" data-status="selected">
+                <td>FA24-101</td>
+                <td>Ahmed Raza</td>
+                <td>FSc Pre-Medical</td>
+                <td>2024</td>
+                <td><span class="status-badge status-selected">Selected &ndash; Army Medical Corps</span></td>
+              </tr>
+              <tr data-course="entry-test-prep" data-year="2024" data-status="selected">
+                <td>FA24-102</td>
+                <td>Bilal Hussain</td>
+                <td>Entry Test Preparation</td>
+                <td>2024</td>
+                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Air Force</span></td>
+              </tr>
+              <tr data-course="matric-science" data-year="2024" data-status="qualified">
+                <td>FA24-103</td>
+                <td>Sana Fatima</td>
+                <td>Matric Science</td>
+                <td>2024</td>
+                <td><span class="status-badge status-qualified">Promoted to FSc</span></td>
+              </tr>
+              <tr data-course="issb-interview-prep" data-year="2024" data-status="selected">
+                <td>FA24-104</td>
+                <td>Usman Tariq</td>
+                <td>ISSB &amp; Interview Prep</td>
+                <td>2024</td>
+                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Army</span></td>
+              </tr>
+              <tr data-course="fsc-pre-engineering" data-year="2024" data-status="qualified">
+                <td>FA24-105</td>
+                <td>Ayesha Noor</td>
+                <td>FSc Pre-Engineering</td>
+                <td>2024</td>
+                <td><span class="status-badge status-qualified">Qualified Written Test</span></td>
+              </tr>
+              <tr data-course="entry-test-prep" data-year="2023" data-status="selected">
+                <td>FA23-106</td>
+                <td>Hamza Sheikh</td>
+                <td>Entry Test Preparation</td>
+                <td>2023</td>
+                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Navy</span></td>
+              </tr>
+              <tr data-course="matric-arts" data-year="2024" data-status="qualified">
+                <td>FA24-107</td>
+                <td>Zainab Malik</td>
+                <td>Matric Arts</td>
+                <td>2024</td>
+                <td><span class="status-badge status-qualified">Promoted to FSc</span></td>
+              </tr>
+              <tr data-course="issb-interview-prep" data-year="2023" data-status="not-selected">
+                <td>FA23-108</td>
+                <td>Ali Hassan</td>
+                <td>ISSB &amp; Interview Prep</td>
+                <td>2023</td>
+                <td><span class="status-badge status-not-selected">Not Selected</span></td>
+              </tr>
+              <tr data-course="fsc-pre-medical" data-year="2023" data-status="selected">
+                <td>FA23-109</td>
+                <td>Mahnoor Iqbal</td>
+                <td>FSc Pre-Medical</td>
+                <td>2023</td>
+                <td><span class="status-badge status-selected">Selected &ndash; Army Medical Corps</span></td>
+              </tr>
+              <tr data-course="entry-test-prep" data-year="2024" data-status="in-process">
+                <td>FA24-110</td>
+                <td>Talha Farooq</td>
+                <td>Entry Test Preparation</td>
+                <td>2024</td>
+                <td><span class="status-badge status-in-process">In Process</span></td>
+              </tr>
+              <tr class="no-results-row d-none">
+                <td colspan="5">No matching records found. Try adjusting your filters.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="small text-center mt-4 mb-0 text-muted">
+          Results shown above are for illustration purposes. For verified,
+          up-to-date results or a specific candidate's status, please contact
+          the admissions office directly with the candidate's roll number.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer" class="pt-5 pb-4 text-white">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <h5 class="fw-bold mb-3"><i class="bi bi-shield-fill-check me-2"></i>Forces Academy</h5>
+          <p class="mb-0">Preparing Faisalabad's future defenders &mdash; written tests, physical training, and ISSB interview coaching under one roof.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="fw-bold mb-3">More</h6>
+          <ul class="list-unstyled footer-links">
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Student Portal</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h6 class="fw-bold mb-3">Contact Us</h6>
+          <ul class="list-unstyled footer-links">
+            <li><i class="bi bi-geo-alt-fill me-2"></i>Faisalabad, Punjab, Pakistan</li>
+            <li><i class="bi bi-telephone-fill me-2"></i>+92 300 0000000</li>
+            <li><i class="bi bi-envelope-fill me-2"></i>info@forcesacademy.edu.pk</li>
+          </ul>
+          <div class="social-icons mt-3">
+            <a href="https://www.facebook.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@forcesacademyfaisalabad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider my-4" />
+      <p class="text-center mb-0 small">&copy; 2026 Forces Academy Faisalabad. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/results-filter.js"></script>
+</body>
+</html>
