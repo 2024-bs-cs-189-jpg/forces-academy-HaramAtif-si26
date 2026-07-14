@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Forces Academy Faisalabad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- GLightbox (lightbox library) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-shield-fill-check me-2"></i>Forces Academy
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-portal fw-semibold px-3 ms-lg-2" href="#">Student Portal</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="page-banner" class="text-center text-white">
+    <div class="page-banner-bg"></div>
+    <div class="container position-relative">
+      <div class="page-banner-icon mb-3"><i class="bi bi-images"></i></div>
+      <h1 class="fw-bold">Gallery</h1>
+      <div class="page-banner-divider"></div>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 mt-3">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <main class="page-content">
+
+    <section id="gallery-intro" class="py-6 pb-0">
+      <div class="container text-center">
+        <span class="section-eyebrow justify-content-center">Life at Forces Academy</span>
+        <h2 class="fw-bold mt-2 mb-3">Moments Worth Remembering</h2>
+        <p class="mx-auto" style="max-width: 720px;">
+          A glimpse into campus life &mdash; from convocation ceremonies and
+          sports activities to everyday classroom learning. Click any photo
+          to view it full size, or use the filters below to browse by
+          category.
+        </p>
+      </div>
+    </section>
+
+    <section id="gallery-filters" class="py-4">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-center gap-2" id="filterButtons">
+          <button type="button" class="btn gallery-filter-btn active" data-filter="all">All</button>
+          <button type="button" class="btn gallery-filter-btn" data-filter="events">Events</button>
+          <button type="button" class="btn gallery-filter-btn" data-filter="sports">Sports</button>
+          <button type="button" class="btn gallery-filter-btn" data-filter="academic">Academic</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery-grid" class="pb-6">
+      <div class="container">
+        <div class="row g-4" id="galleryGrid">
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
+            <a href="https://images.unsplash.com/photo-1580582932707-520aed937b7b?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Main Campus Building">
+              <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Forces Academy campus building" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Main Campus Building</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
+            <a href="https://images.unsplash.com/photo-1509062522246-3755977927d7?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Written Test Preparation Class">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Classroom session" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Written Test Preparation Class</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="sports">
+            <a href="https://images.unsplash.com/photo-1502904550040-7534597429ae?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Morning PT &amp; Endurance Run">
+              <img src="https://images.unsplash.com/photo-1502904550040-7534597429ae?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Cadets in running formation" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Morning PT &amp; Endurance Run</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
+            <a href="https://images.unsplash.com/photo-1509228468518-180dd4864904?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Mathematics &amp; Physics Coaching">
+              <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Mathematics coaching" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Mathematics &amp; Physics Coaching</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
+            <a href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="ISSB Group Discussion Practice">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Group study session" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">ISSB Group Discussion Practice</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
+            <a href="https://images.unsplash.com/photo-1560250097-0b93528c311a?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Guest Lecture by Retired Officers">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Guest speaker at event" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Guest Lecture by Retired Officers</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
+            <a href="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Study Material &amp; Test Series">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Study material and books" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Study Material &amp; Test Series</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="sports">
+            <a href="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Physical Training Session">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Physical trainer" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Physical Training Session</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
+            <a href="https://images.unsplash.com/photo-1552058544-f2b08422138a?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Faculty Address at Convocation">
+              <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Faculty at convocation" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Faculty Address at Convocation</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
+            <a href="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Library &amp; Study Resources">
+              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Books and study resources" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Library &amp; Study Resources</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
+            <a href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Academic Reference Material">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Reference books" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Academic Reference Material</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
+            <a href="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="New Batch Orientation Day">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Instructor welcoming new batch" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">New Batch Orientation Day</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 text-center py-5 no-gallery-results d-none" id="noGalleryResults">
+            <p class="text-muted mb-0">No images found in this category yet.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer" class="pt-5 pb-4 text-white">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <h5 class="fw-bold mb-3"><i class="bi bi-shield-fill-check me-2"></i>Forces Academy</h5>
+          <p class="mb-0">Preparing Faisalabad's future defenders &mdash; written tests, physical training, and ISSB interview coaching under one roof.</p>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h6 class="fw-bold mb-3">More</h6>
+          <ul class="list-unstyled footer-links">
+            <li><a href="results.html">Results</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Student Portal</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h6 class="fw-bold mb-3">Contact Us</h6>
+          <ul class="list-unstyled footer-links">
+            <li><i class="bi bi-geo-alt-fill me-2"></i>Faisalabad, Punjab, Pakistan</li>
+            <li><i class="bi bi-telephone-fill me-2"></i>+92 300 0000000</li>
+            <li><i class="bi bi-envelope-fill me-2"></i>info@forcesacademy.edu.pk</li>
+          </ul>
+          <div class="social-icons mt-3">
+            <a href="https://www.facebook.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@forcesacademyfaisalabad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider my-4" />
+      <p class="text-center mb-0 small">&copy; 2026 Forces Academy Faisalabad. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- GLightbox (lightbox library) -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize lightbox on all gallery images
+      var lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true
+      });
+
+      // Category filter buttons
+      var filterButtons = document.querySelectorAll('.gallery-filter-btn');
+      var galleryItems = document.querySelectorAll('.gallery-item');
+      var noResults = document.getElementById('noGalleryResults');
+
+      if (!filterButtons.length || !galleryItems.length) return;
+
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach(function (b) {
+            b.classList.remove('active');
+          });
+          btn.classList.add('active');
+
+          var filter = btn.getAttribute('data-filter');
+          var visibleCount = 0;
+
+          galleryItems.forEach(function (item) {
+            var matches = filter === 'all' || item.getAttribute('data-category') === filter;
+            item.classList.toggle('gallery-hidden', !matches);
+            if (matches) visibleCount++;
+          });
+
+          if (noResults) {
+            noResults.classList.toggle('d-none', visibleCount !== 0);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
