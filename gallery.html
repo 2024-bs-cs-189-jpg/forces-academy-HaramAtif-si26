@@ -76,32 +76,24 @@
       </div>
     </section>
 
-    <section id="gallery-stats" class="py-6 pb-0" style="background-color:#ffffff;">
+    <section id="gallery-stats" class="gallery-stats-strip py-4">
       <div class="container">
-        <div class="row g-3" id="galleryStatsRow">
-          <div class="col-6 col-lg-3">
-            <div class="results-summary-card">
-              <div class="results-summary-number" id="statTotal">0</div>
-              <div class="results-summary-label">Total Photos</div>
-            </div>
+        <div class="row text-center gy-3" id="galleryStatsRow">
+          <div class="col-6 col-md-3">
+            <h3 class="stat-number fw-bold mb-0" id="statTotal">0</h3>
+            <p class="stat-label mb-0">Total Photos</p>
           </div>
-          <div class="col-6 col-lg-3">
-            <div class="results-summary-card">
-              <div class="results-summary-number" id="statEvents">0</div>
-              <div class="results-summary-label">Events</div>
-            </div>
+          <div class="col-6 col-md-3">
+            <h3 class="stat-number fw-bold mb-0" id="statEvents">0</h3>
+            <p class="stat-label mb-0">Events</p>
           </div>
-          <div class="col-6 col-lg-3">
-            <div class="results-summary-card">
-              <div class="results-summary-number" id="statSports">0</div>
-              <div class="results-summary-label">Sports</div>
-            </div>
+          <div class="col-6 col-md-3">
+            <h3 class="stat-number fw-bold mb-0" id="statSports">0</h3>
+            <p class="stat-label mb-0">Sports</p>
           </div>
-          <div class="col-6 col-lg-3">
-            <div class="results-summary-card">
-              <div class="results-summary-number" id="statAcademic">0</div>
-              <div class="results-summary-label">Academic</div>
-            </div>
+          <div class="col-6 col-md-3">
+            <h3 class="stat-number fw-bold mb-0" id="statAcademic">0</h3>
+            <p class="stat-label mb-0">Academic</p>
           </div>
         </div>
       </div>
@@ -123,123 +115,171 @@
         <div class="row g-4" id="galleryGrid">
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
-            <a href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Award Distribution Ceremony">
-              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Award distribution ceremony" class="gallery-img" />
+            <a href="https://images.unsplash.com/photo-1580582932707-520aed937b7b?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Main Campus Building">
+              <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Forces Academy campus building" class="gallery-img" />
               <div class="gallery-overlay">
-                <span class="gallery-caption">Award Distribution Ceremony</span>
+                <span class="gallery-caption">Main Campus Building</span>
               </div>
             </a>
+          <button type="button" class="gallery-like-btn" data-like-id="1" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="1">12</span>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
             <a href="https://images.unsplash.com/photo-1509062522246-3755977927d7?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Written Test Preparation Class">
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Written Test Preparation Class">
               <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Classroom session" class="gallery-img" />
               <div class="gallery-overlay">
                 <span class="gallery-caption">Written Test Preparation Class</span>
               </div>
             </a>
+          <button type="button" class="gallery-like-btn" data-like-id="2" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="2">12</span>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="sports">
             <a href="https://images.unsplash.com/photo-1502904550040-7534597429ae?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Morning PT &amp; Endurance Run">
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Morning PT &amp; Endurance Run">
               <img src="https://images.unsplash.com/photo-1502904550040-7534597429ae?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Cadets in running formation" class="gallery-img" />
               <div class="gallery-overlay">
                 <span class="gallery-caption">Morning PT &amp; Endurance Run</span>
               </div>
             </a>
+          <button type="button" class="gallery-like-btn" data-like-id="3" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="3">12</span>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
             <a href="https://images.unsplash.com/photo-1509228468518-180dd4864904?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Mathematics &amp; Physics Coaching">
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Mathematics &amp; Physics Coaching">
               <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Mathematics coaching" class="gallery-img" />
               <div class="gallery-overlay">
                 <span class="gallery-caption">Mathematics &amp; Physics Coaching</span>
               </div>
             </a>
+          <button type="button" class="gallery-like-btn" data-like-id="4" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="4">12</span>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
             <a href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="ISSB Group Discussion Practice">
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="ISSB Group Discussion Practice">
               <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Group study session" class="gallery-img" />
               <div class="gallery-overlay">
                 <span class="gallery-caption">ISSB Group Discussion Practice</span>
               </div>
             </a>
+          <button type="button" class="gallery-like-btn" data-like-id="5" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="5">12</span>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
             <a href="https://images.unsplash.com/photo-1560250097-0b93528c311a?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Guest Lecture by Retired Officers">
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Guest Lecture by Retired Officers">
               <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Guest speaker at event" class="gallery-img" />
               <div class="gallery-overlay">
                 <span class="gallery-caption">Guest Lecture by Retired Officers</span>
               </div>
             </a>
+          <button type="button" class="gallery-like-btn" data-like-id="6" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="6">12</span>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
             <a href="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Study Material &amp; Test Series">
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Study Material &amp; Test Series">
               <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Study material and books" class="gallery-img" />
               <div class="gallery-overlay">
                 <span class="gallery-caption">Study Material &amp; Test Series</span>
               </div>
             </a>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="sports">
-            <a href="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Team Sports &amp; Fitness Drills">
-              <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Team fitness drill" class="gallery-img" />
-              <div class="gallery-overlay">
-                <span class="gallery-caption">Team Sports &amp; Fitness Drills</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
-            <a href="https://images.unsplash.com/photo-1552058544-f2b08422138a?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Faculty Address at Convocation">
-              <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Faculty at convocation" class="gallery-img" />
-              <div class="gallery-overlay">
-                <span class="gallery-caption">Faculty Address at Convocation</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
-            <a href="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Library &amp; Study Resources">
-              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Books and study resources" class="gallery-img" />
-              <div class="gallery-overlay">
-                <span class="gallery-caption">Library &amp; Study Resources</span>
-              </div>
-            </a>
+          <button type="button" class="gallery-like-btn" data-like-id="7" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="7">12</span>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="sports">
             <a href="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="Physical Training Session">
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Physical Training Session">
               <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Physical trainer" class="gallery-img" />
               <div class="gallery-overlay">
                 <span class="gallery-caption">Physical Training Session</span>
               </div>
             </a>
+          <button type="button" class="gallery-like-btn" data-like-id="8" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="8">12</span>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
+            <a href="https://images.unsplash.com/photo-1552058544-f2b08422138a?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Faculty Address at Convocation">
+              <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Faculty at convocation" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Faculty Address at Convocation</span>
+              </div>
+            </a>
+          <button type="button" class="gallery-like-btn" data-like-id="9" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="9">12</span>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
+            <a href="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Library &amp; Study Resources">
+              <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Books and study resources" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Library &amp; Study Resources</span>
+              </div>
+            </a>
+          <button type="button" class="gallery-like-btn" data-like-id="10" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="10">12</span>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="academic">
+            <a href="https://images.unsplash.com/photo-1523240795612-9a054b0db644?fm=jpg&q=80&w=1600&auto=format&fit=crop"
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="Academic Reference Material">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Reference books" class="gallery-img" />
+              <div class="gallery-overlay">
+                <span class="gallery-caption">Academic Reference Material</span>
+              </div>
+            </a>
+          <button type="button" class="gallery-like-btn" data-like-id="11" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="11">12</span>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-3 gallery-item" data-category="events">
             <a href="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fm=jpg&q=80&w=1600&auto=format&fit=crop"
-               class="gallery-img-wrap glightbox" data-gallery="academy-gallery" data-title="New Batch Orientation Day">
+               class="gallery-img-wrap glightbox" data-type="image" data-gallery="academy-gallery" data-title="New Batch Orientation Day">
               <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Instructor welcoming new batch" class="gallery-img" />
               <div class="gallery-overlay">
                 <span class="gallery-caption">New Batch Orientation Day</span>
               </div>
             </a>
+          <button type="button" class="gallery-like-btn" data-like-id="12" aria-label="Like this photo">
+            <i class="bi bi-heart-fill"></i>
+          </button>
+          <span class="gallery-like-count" data-count-id="12">12</span>
           </div>
 
           <div class="col-12 text-center py-5 no-gallery-results d-none" id="noGalleryResults">
@@ -361,6 +401,27 @@
       document.querySelectorAll('.filter-count').forEach(function (badge) {
         var key = badge.getAttribute('data-count-for');
         badge.textContent = '(' + (counts[key] || 0) + ')';
+      });
+
+      // Like button toggle
+      document.querySelectorAll('.gallery-like-btn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          var id = btn.getAttribute('data-like-id');
+          var countEl = document.querySelector('.gallery-like-count[data-count-id="' + id + '"]');
+          var currentCount = parseInt(countEl.textContent, 10);
+          var isLiked = btn.classList.contains('liked');
+
+          if (isLiked) {
+            btn.classList.remove('liked');
+            countEl.textContent = currentCount - 1;
+          } else {
+            btn.classList.add('liked');
+            countEl.textContent = currentCount + 1;
+          }
+        });
       });
 
       if (!filterButtons.length || !galleryItems.length) return;

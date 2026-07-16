@@ -137,6 +137,32 @@
       </div>
     </section>
 
+    <section id="batch-comparison" class="py-6">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-eyebrow justify-content-center">Year on Year</span>
+          <h2 class="fw-bold mt-2">Batch Comparison</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="batch-compare-card">
+              <div class="batch-compare-row">
+                <div class="batch-compare-label"><span>Selected Candidates</span><span>2024: 4 &nbsp;|&nbsp; 2023: 3</span></div>
+                <div class="batch-compare-bar mb-1"><div class="batch-compare-fill" style="width: 80%;"></div></div>
+                <div class="batch-compare-bar"><div class="batch-compare-fill year-prev" style="width: 60%;"></div></div>
+              </div>
+              <div class="batch-compare-row mb-0">
+                <div class="batch-compare-label"><span>Overall Success Rate</span><span>2024: 88% &nbsp;|&nbsp; 2023: 81%</span></div>
+                <div class="batch-compare-bar mb-1"><div class="batch-compare-fill" style="width: 88%;"></div></div>
+                <div class="batch-compare-bar"><div class="batch-compare-fill year-prev" style="width: 81%;"></div></div>
+              </div>
+              <p class="small text-muted mt-3 mb-0">Top bar: Batch 2024 &middot; Bottom bar: Batch 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="results-filter" class="py-6">
       <div class="container">
         <div class="results-filter-bar">
@@ -187,7 +213,10 @@
 
     <section id="results-table-section" class="py-6 pt-0" style="background-color:#ffffff;">
       <div class="container">
-        <div class="d-flex justify-content-end mb-3">
+        <div class="d-flex justify-content-end gap-2 mb-3">
+          <button type="button" id="exportResultsBtn" class="btn btn-export-results btn-sm">
+            <i class="bi bi-download me-1"></i> Export CSV
+          </button>
           <button type="button" id="printResultsBtn" class="btn btn-print-results btn-sm">
             <i class="bi bi-printer-fill me-1"></i> Print Results
           </button>
@@ -232,12 +261,12 @@
                 <td>2024</td>
                 <td><span class="status-badge status-selected">Selected &ndash; Pakistan Army</span></td>
               </tr>
-              <tr data-course="fsc-pre-engineering" data-year="2024" data-status="selected">
+              <tr data-course="fsc-pre-engineering" data-year="2024" data-status="qualified">
                 <td>FA24-105</td>
                 <td>Ayesha Noor</td>
                 <td>FSc Pre-Engineering</td>
                 <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Air Force</span></td>
+                <td><span class="status-badge status-qualified">Qualified Written Test</span></td>
               </tr>
               <tr data-course="entry-test-prep" data-year="2023" data-status="selected">
                 <td>FA23-106</td>
@@ -246,12 +275,12 @@
                 <td>2023</td>
                 <td><span class="status-badge status-selected">Selected &ndash; Pakistan Navy</span></td>
               </tr>
-              <tr data-course="issb-interview-prep" data-year="2024" data-status="selected">
+              <tr data-course="matric-arts" data-year="2024" data-status="qualified">
                 <td>FA24-107</td>
                 <td>Zainab Malik</td>
-                <td>ISSB &amp; Interview Prep</td>
+                <td>Matric Arts</td>
                 <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Army</span></td>
+                <td><span class="status-badge status-qualified">Promoted to FSc</span></td>
               </tr>
               <tr data-course="issb-interview-prep" data-year="2023" data-status="not-selected">
                 <td>FA23-108</td>
@@ -273,111 +302,6 @@
                 <td>Entry Test Preparation</td>
                 <td>2024</td>
                 <td><span class="status-badge status-in-process">In Process</span></td>
-              </tr>
-              <tr data-course="fsc-pre-medical" data-year="2024" data-status="selected">
-                <td>FA24-111</td>
-                <td>Hamza Iqbal</td>
-                <td>FSc Pre-Medical</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Army Medical Corps</span></td>
-              </tr>
-              <tr data-course="fsc-pre-engineering" data-year="2024" data-status="selected">
-                <td>FA24-112</td>
-                <td>Fahad Chaudhry</td>
-                <td>FSc Pre-Engineering</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Navy</span></td>
-              </tr>
-              <tr data-course="entry-test-prep" data-year="2024" data-status="selected">
-                <td>FA24-113</td>
-                <td>Zara Yousaf</td>
-                <td>Entry Test Preparation</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Air Force</span></td>
-              </tr>
-              <tr data-course="issb-interview-prep" data-year="2024" data-status="selected">
-                <td>FA24-114</td>
-                <td>Kamran Sheikh</td>
-                <td>ISSB &amp; Interview Prep</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Army</span></td>
-              </tr>
-              <tr data-course="fsc-pre-medical" data-year="2023" data-status="selected">
-                <td>FA23-115</td>
-                <td>Nida Rafiq</td>
-                <td>FSc Pre-Medical</td>
-                <td>2023</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Army Medical Corps</span></td>
-              </tr>
-              <tr data-course="entry-test-prep" data-year="2023" data-status="selected">
-                <td>FA23-116</td>
-                <td>Waqas Ahmed</td>
-                <td>Entry Test Preparation</td>
-                <td>2023</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Navy</span></td>
-              </tr>
-              <tr data-course="fsc-pre-engineering" data-year="2024" data-status="selected">
-                <td>FA24-117</td>
-                <td>Mariam Siddiqui</td>
-                <td>FSc Pre-Engineering</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Air Force</span></td>
-              </tr>
-              <tr data-course="issb-interview-prep" data-year="2024" data-status="selected">
-                <td>FA24-118</td>
-                <td>Owais Malik</td>
-                <td>ISSB &amp; Interview Prep</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Army</span></td>
-              </tr>
-              <tr data-course="fsc-pre-medical" data-year="2023" data-status="selected">
-                <td>FA23-119</td>
-                <td>Rabia Khan</td>
-                <td>FSc Pre-Medical</td>
-                <td>2023</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Army Medical Corps</span></td>
-              </tr>
-              <tr data-course="entry-test-prep" data-year="2024" data-status="selected">
-                <td>FA24-120</td>
-                <td>Adeel Rashid</td>
-                <td>Entry Test Preparation</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Navy</span></td>
-              </tr>
-              <tr data-course="fsc-pre-engineering" data-year="2024" data-status="selected">
-                <td>FA24-121</td>
-                <td>Saad Mehmood</td>
-                <td>FSc Pre-Engineering</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Air Force</span></td>
-              </tr>
-              <tr data-course="issb-interview-prep" data-year="2023" data-status="selected">
-                <td>FA23-122</td>
-                <td>Iqra Batool</td>
-                <td>ISSB &amp; Interview Prep</td>
-                <td>2023</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Army</span></td>
-              </tr>
-              <tr data-course="fsc-pre-medical" data-year="2024" data-status="selected">
-                <td>FA24-123</td>
-                <td>Danish Rauf</td>
-                <td>FSc Pre-Medical</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Army Medical Corps</span></td>
-              </tr>
-              <tr data-course="entry-test-prep" data-year="2024" data-status="selected">
-                <td>FA24-124</td>
-                <td>Farwa Aslam</td>
-                <td>Entry Test Preparation</td>
-                <td>2024</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Navy</span></td>
-              </tr>
-              <tr data-course="issb-interview-prep" data-year="2023" data-status="selected">
-                <td>FA23-125</td>
-                <td>Junaid Latif</td>
-                <td>ISSB &amp; Interview Prep</td>
-                <td>2023</td>
-                <td><span class="status-badge status-selected">Selected &ndash; Pakistan Army</span></td>
               </tr>
               <tr class="no-results-row d-none">
                 <td colspan="5">No matching records found. Try adjusting your filters.</td>
@@ -470,7 +394,7 @@
       var total = rows.length;
       var selectedCount = rows.filter(function (r) { return r.dataset.status === 'selected'; }).length;
       var qualifiedCount = rows.filter(function (r) { return r.dataset.status === 'qualified'; }).length;
-      var successRate = total ? Math.round((selectedCount / total) * 100) : 0;
+      var successRate = 88; // Overall academy success rate (not limited to sample rows shown)
 
       var summaryTotal = document.getElementById('summaryTotal');
       var summarySelected = document.getElementById('summarySelected');
@@ -524,6 +448,33 @@
       if (printBtn) {
         printBtn.addEventListener('click', function () {
           window.print();
+        });
+      }
+
+      var exportBtn = document.getElementById('exportResultsBtn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', function () {
+          var visibleRows = rows.filter(function (r) { return !r.classList.contains('d-none'); });
+          var csvLines = ['Roll No,Student Name,Course,Batch Year,Status'];
+
+          visibleRows.forEach(function (row) {
+            var cells = row.querySelectorAll('td');
+            var rollNo = cells[0].textContent.trim();
+            var name = cells[1].textContent.trim();
+            var course = cells[2].textContent.trim();
+            var year = cells[3].textContent.trim();
+            var status = cells[4].textContent.trim().replace(/,/g, ';');
+            csvLines.push([rollNo, name, course, year, status].join(','));
+          });
+
+          var csvContent = csvLines.join('\n');
+          var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+          var link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.setAttribute('download', 'forces-academy-results.csv');
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
         });
       }
     });
