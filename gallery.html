@@ -12,6 +12,7 @@
   <!-- GLightbox (lightbox library) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <link rel="stylesheet" href="CSS/style.css" />
+  <noscript><style>body{opacity:1 !important;}</style></noscript>
 </head>
 <body>
   <!-- Floating Contact Buttons -->
@@ -76,24 +77,15 @@
       </div>
     </section>
 
-    <section id="gallery-stats" class="gallery-stats-strip py-4">
+    <!-- NEW FEATURE 1: Photo of the Month highlight banner -->
+    <section id="photo-highlight" class="pb-6">
       <div class="container">
-        <div class="row text-center gy-3" id="galleryStatsRow">
-          <div class="col-6 col-md-3">
-            <h3 class="stat-number fw-bold mb-0" id="statTotal">0</h3>
-            <p class="stat-label mb-0">Total Photos</p>
-          </div>
-          <div class="col-6 col-md-3">
-            <h3 class="stat-number fw-bold mb-0" id="statEvents">0</h3>
-            <p class="stat-label mb-0">Events</p>
-          </div>
-          <div class="col-6 col-md-3">
-            <h3 class="stat-number fw-bold mb-0" id="statSports">0</h3>
-            <p class="stat-label mb-0">Sports</p>
-          </div>
-          <div class="col-6 col-md-3">
-            <h3 class="stat-number fw-bold mb-0" id="statAcademic">0</h3>
-            <p class="stat-label mb-0">Academic</p>
+        <div class="photo-highlight-banner">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fm=jpg&q=80&w=1600&auto=format&fit=crop" alt="ISSB group discussion practice" />
+          <div class="photo-highlight-content">
+            <span class="photo-highlight-badge">Photo of the Month</span>
+            <h4 class="fw-bold mb-1">ISSB Group Discussion Practice</h4>
+            <p class="mb-0 small">Candidates sharpening group-task and communication skills ahead of the interview stage.</p>
           </div>
         </div>
       </div>
@@ -101,11 +93,30 @@
 
     <section id="gallery-filters" class="py-4">
       <div class="container">
-        <div class="d-flex flex-wrap justify-content-center gap-2" id="filterButtons">
+        <!-- NEW FEATURE 2: Search bar -->
+        <div class="gallery-search-wrap">
+          <i class="bi bi-search"></i>
+          <input type="text" id="gallerySearchInput" placeholder="Search photos e.g. PT, ISSB, Convocation..." />
+        </div>
+        <p class="text-center text-muted mb-3" id="galleryResultsCounter">Showing 12 of 12 photos</p>
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 mb-3" id="filterButtons">
           <button type="button" class="btn gallery-filter-btn active" data-filter="all">All <span class="filter-count" data-count-for="all"></span></button>
           <button type="button" class="btn gallery-filter-btn" data-filter="events">Events <span class="filter-count" data-count-for="events"></span></button>
           <button type="button" class="btn gallery-filter-btn" data-filter="sports">Sports <span class="filter-count" data-count-for="sports"></span></button>
           <button type="button" class="btn gallery-filter-btn" data-filter="academic">Academic <span class="filter-count" data-count-for="academic"></span></button>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+          <div class="d-flex gap-2">
+            <button type="button" class="view-toggle-btn active" id="gridViewBtn" title="Grid view" aria-label="Grid view">
+              <i class="bi bi-grid-3x3-gap-fill"></i>
+            </button>
+            <button type="button" class="view-toggle-btn" id="listViewBtn" title="List view" aria-label="List view">
+              <i class="bi bi-list-ul"></i>
+            </button>
+          </div>
+          <button type="button" class="btn gallery-filter-btn" id="randomPhotoBtn">
+            <i class="bi bi-shuffle me-1"></i>Surprise Me
+          </button>
         </div>
       </div>
     </section>
@@ -283,9 +294,37 @@
           </div>
 
           <div class="col-12 text-center py-5 no-gallery-results d-none" id="noGalleryResults">
-            <p class="text-muted mb-0">No images found in this category yet.</p>
+            <p class="text-muted mb-0">No images found. Try a different search or filter.</p>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW FEATURE 3: Recently Viewed tracker -->
+    <section id="recentlyViewedSection" class="pb-6 d-none">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="section-eyebrow justify-content-center">Just Viewed</span>
+          <h4 class="fw-bold mt-2">Recently Viewed Photos</h4>
+        </div>
+        <div class="row g-3" id="recentlyViewedRow"></div>
+      </div>
+    </section>
+
+    <section id="upload-photos" class="pb-6">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="upload-cta-card">
+              <i class="bi bi-camera-fill" style="font-size: 2rem; color: var(--fa-gold-dark);"></i>
+              <h5 class="fw-bold mt-3 mb-2">Have a Great Campus Photo?</h5>
+              <p class="text-muted mb-3">Students and alumni are welcome to share their favourite Forces Academy moments for a chance to be featured in our gallery.</p>
+              <a href="contact.html" class="btn btn-outline-portal fw-semibold px-4">
+                <i class="bi bi-upload me-1"></i> Submit a Photo
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -377,9 +416,12 @@
       });
 
       // Category filter buttons
-      var filterButtons = document.querySelectorAll('.gallery-filter-btn');
+      var filterButtons = document.querySelectorAll('.gallery-filter-btn:not(#randomPhotoBtn)');
       var galleryItems = document.querySelectorAll('.gallery-item');
       var noResults = document.getElementById('noGalleryResults');
+      var resultsCounter = document.getElementById('galleryResultsCounter');
+      var searchInput = document.getElementById('gallerySearchInput');
+      var currentFilter = 'all';
 
       // Compute stats and filter counts
       var counts = { all: 0, events: 0, sports: 0, academic: 0 };
@@ -388,15 +430,6 @@
         counts.all++;
         if (counts[cat] !== undefined) counts[cat]++;
       });
-
-      var statTotal = document.getElementById('statTotal');
-      var statEvents = document.getElementById('statEvents');
-      var statSports = document.getElementById('statSports');
-      var statAcademic = document.getElementById('statAcademic');
-      if (statTotal) statTotal.textContent = counts.all;
-      if (statEvents) statEvents.textContent = counts.events;
-      if (statSports) statSports.textContent = counts.sports;
-      if (statAcademic) statAcademic.textContent = counts.academic;
 
       document.querySelectorAll('.filter-count').forEach(function (badge) {
         var key = badge.getAttribute('data-count-for');
@@ -424,7 +457,30 @@
         });
       });
 
-      if (!filterButtons.length || !galleryItems.length) return;
+      if (!galleryItems.length) return;
+
+      // NEW: combined category filter + live search
+      function updateGalleryDisplay() {
+        var term = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        var visibleCount = 0;
+
+        galleryItems.forEach(function (item) {
+          var matchesCategory = currentFilter === 'all' || item.getAttribute('data-category') === currentFilter;
+          var captionEl = item.querySelector('.gallery-caption');
+          var captionText = captionEl ? captionEl.textContent.toLowerCase() : '';
+          var matchesSearch = term === '' || captionText.indexOf(term) !== -1;
+          var visible = matchesCategory && matchesSearch;
+          item.classList.toggle('gallery-hidden', !visible);
+          if (visible) visibleCount++;
+        });
+
+        if (noResults) {
+          noResults.classList.toggle('d-none', visibleCount !== 0);
+        }
+        if (resultsCounter) {
+          resultsCounter.textContent = 'Showing ' + visibleCount + ' of ' + counts.all + ' photos';
+        }
+      }
 
       filterButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -432,20 +488,165 @@
             b.classList.remove('active');
           });
           btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter');
+          updateGalleryDisplay();
+        });
+      });
 
-          var filter = btn.getAttribute('data-filter');
-          var visibleCount = 0;
+      if (searchInput) {
+        searchInput.addEventListener('input', updateGalleryDisplay);
+      }
+    });
+  </script>
 
-          galleryItems.forEach(function (item) {
-            var matches = filter === 'all' || item.getAttribute('data-category') === filter;
-            item.classList.toggle('gallery-hidden', !matches);
-            if (matches) visibleCount++;
+  <script>
+    // Grid / List view toggle
+    document.addEventListener('DOMContentLoaded', function () {
+      var gridBtn = document.getElementById('gridViewBtn');
+      var listBtn = document.getElementById('listViewBtn');
+      var galleryGrid = document.getElementById('galleryGrid');
+
+      if (!gridBtn || !listBtn || !galleryGrid) return;
+
+      gridBtn.addEventListener('click', function () {
+        galleryGrid.classList.remove('list-view');
+        gridBtn.classList.add('active');
+        listBtn.classList.remove('active');
+      });
+
+      listBtn.addEventListener('click', function () {
+        galleryGrid.classList.add('list-view');
+        listBtn.classList.add('active');
+        gridBtn.classList.remove('active');
+      });
+    });
+
+    // Random photo shuffle
+    document.addEventListener('DOMContentLoaded', function () {
+      var randomBtn = document.getElementById('randomPhotoBtn');
+      if (!randomBtn) return;
+
+      randomBtn.addEventListener('click', function () {
+        var visibleItems = Array.prototype.slice.call(
+          document.querySelectorAll('.gallery-item:not(.gallery-hidden)')
+        );
+        if (!visibleItems.length) return;
+
+        document.querySelectorAll('.gallery-item.shuffle-highlight').forEach(function (el) {
+          el.classList.remove('shuffle-highlight');
+        });
+
+        var randomItem = visibleItems[Math.floor(Math.random() * visibleItems.length)];
+        randomItem.classList.add('shuffle-highlight');
+        randomItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  </script>
+
+  <script>
+    // NEW: Recently Viewed tracker (sessionStorage)
+    document.addEventListener('DOMContentLoaded', function () {
+      var recentSection = document.getElementById('recentlyViewedSection');
+      var recentRow = document.getElementById('recentlyViewedRow');
+      if (!recentSection || !recentRow) return;
+
+      function getRecent() {
+        try {
+          return JSON.parse(sessionStorage.getItem('fa_recent_photos') || '[]');
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function renderRecent() {
+        var items = getRecent();
+        if (!items.length) {
+          recentSection.classList.add('d-none');
+          return;
+        }
+        recentSection.classList.remove('d-none');
+        recentRow.innerHTML = items.map(function (item) {
+          return '<div class="col-6 col-md-3"><div class="gallery-item"><div class="gallery-img-wrap"><img src="' +
+            item.img + '" alt="' + item.title + '" class="gallery-img" /><div class="gallery-overlay"><span class="gallery-caption">' +
+            item.title + '</span></div></div></div></div>';
+        }).join('');
+      }
+
+      document.querySelectorAll('.gallery-img-wrap.glightbox').forEach(function (link) {
+        link.addEventListener('click', function () {
+          var title = link.getAttribute('data-title') || 'Photo';
+          var imgEl = link.querySelector('img');
+          var img = imgEl ? imgEl.src : '';
+          var items = getRecent().filter(function (it) { return it.title !== title; });
+          items.unshift({ title: title, img: img });
+          items = items.slice(0, 4);
+          sessionStorage.setItem('fa_recent_photos', JSON.stringify(items));
+        });
+      });
+
+      renderRecent();
+    });
+  </script>
+
+  <script>
+    // Page fade-in
+    window.addEventListener('load', function () {
+      document.body.classList.add('page-loaded');
+    });
+
+    // Scroll-reveal transitions for card elements
+    document.addEventListener('DOMContentLoaded', function () {
+      var revealSelectors = '.feature-card, .course-card, .team-card, .testimonial-card, ' +
+        '.achiever-card, .results-summary-card, .award-card, .mv-card, .eligibility-card, ' +
+        '.seat-card, .contact-info-card, .gallery-item, .batch-compare-card, .fee-calc-card, ' +
+        '.consultation-card, .selection-process-card, .countdown-card, .timeline-item, .course-finder-card';
+      var revealEls = document.querySelectorAll(revealSelectors);
+
+      if (!revealEls.length) return;
+
+      revealEls.forEach(function (el) {
+        el.classList.add('reveal');
+      });
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
           });
+        }, { threshold: 0.15 });
 
-          if (noResults) {
-            noResults.classList.toggle('d-none', visibleCount !== 0);
+        revealEls.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        revealEls.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    });
+  </script>
+  <script>
+    // Scroll-reveal transitions (site-wide)
+    document.addEventListener('DOMContentLoaded', function () {
+      var revealTargets = document.querySelectorAll('main section, #hero, #cta, #page-banner');
+      revealTargets.forEach(function (el) {
+        el.classList.add('reveal-on-scroll');
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
           }
         });
+      }, { threshold: 0.12 });
+
+      revealTargets.forEach(function (el) {
+        observer.observe(el);
       });
     });
   </script>

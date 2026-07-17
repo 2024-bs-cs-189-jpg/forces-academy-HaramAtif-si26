@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css" />
+  <noscript><style>body{opacity:1 !important;}</style></noscript>
 </head>
 <body>
   <!-- Floating Contact Buttons -->
@@ -148,6 +149,43 @@
       </div>
     </section>
 
+    <section id="eligibility-quiz" class="py-6">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <div class="text-center mb-4">
+              <span class="section-eyebrow justify-content-center">Quick Check</span>
+              <h2 class="fw-bold mt-2">Am I Eligible?</h2>
+            </div>
+            <div class="eligibility-quiz-card">
+              <div class="mb-3">
+                <label for="quizQualification" class="form-label">Highest Qualification</label>
+                <select id="quizQualification" class="form-select">
+                  <option value="below-matric">Below Class 8</option>
+                  <option value="matric">Passed Class 8 or Matric</option>
+                  <option value="fsc">Passed FSc / Equivalent</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="quizMarks" class="form-label">Marks Percentage in Last Exam</label>
+                <select id="quizMarks" class="form-select">
+                  <option value="below-60">Below 60%</option>
+                  <option value="60-plus">60% or above</option>
+                </select>
+              </div>
+              <button type="button" id="checkEligibilityBtn" class="btn btn-portal fw-semibold px-4">
+                Check My Eligibility
+              </button>
+              <div class="eligibility-quiz-result" id="eligibilityResult">
+                <strong id="eligibilityResultTitle"></strong>
+                <p class="mb-0 small mt-1" id="eligibilityResultText"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="seat-availability" class="py-6">
       <div class="container">
         <div class="text-center mb-5">
@@ -197,14 +235,37 @@
             <p class="mb-0">Please bring the following documents at the time of admission. Incomplete files may delay your seat confirmation.</p>
           </div>
           <div class="col-lg-7">
-            <ul class="list-group list-group-flush doc-list">
-              <li class="list-group-item"><i class="bi bi-check-circle-fill"></i> Original + photocopy of matriculation certificate / marksheet</li>
-              <li class="list-group-item"><i class="bi bi-check-circle-fill"></i> Original + photocopy of CNIC / B-Form</li>
-              <li class="list-group-item"><i class="bi bi-check-circle-fill"></i> 4 recent passport-size photographs</li>
-              <li class="list-group-item"><i class="bi bi-check-circle-fill"></i> School / college leaving certificate</li>
-              <li class="list-group-item"><i class="bi bi-check-circle-fill"></i> Parent / guardian CNIC photocopy</li>
-              <li class="list-group-item"><i class="bi bi-check-circle-fill"></i> Domicile certificate (for entry test / ISSB programs)</li>
-            </ul>
+            <p class="small text-muted mb-2">Tick off documents as you prepare them:</p>
+            <div class="doc-tracker-progress-wrap">
+              <div class="doc-tracker-progress-fill" id="docProgressFill"></div>
+            </div>
+            <p class="small fw-semibold mb-3" id="docProgressLabel">0 of 6 ready</p>
+            <div id="docTrackerList">
+              <div class="doc-tracker-item">
+                <input type="checkbox" id="doc1" />
+                <label for="doc1">Original + photocopy of matriculation certificate / marksheet</label>
+              </div>
+              <div class="doc-tracker-item">
+                <input type="checkbox" id="doc2" />
+                <label for="doc2">Original + photocopy of CNIC / B-Form</label>
+              </div>
+              <div class="doc-tracker-item">
+                <input type="checkbox" id="doc3" />
+                <label for="doc3">4 recent passport-size photographs</label>
+              </div>
+              <div class="doc-tracker-item">
+                <input type="checkbox" id="doc4" />
+                <label for="doc4">School / college leaving certificate</label>
+              </div>
+              <div class="doc-tracker-item">
+                <input type="checkbox" id="doc5" />
+                <label for="doc5">Parent / guardian CNIC photocopy</label>
+              </div>
+              <div class="doc-tracker-item">
+                <input type="checkbox" id="doc6" />
+                <label for="doc6">Domicile certificate (for entry test / ISSB programs)</label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -333,6 +394,45 @@
                 </div>
                 <div class="fee-calc-result-amount" id="calcTotal">Rs. 0</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="important-dates" class="py-6" style="background-color:#ffffff;">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-eyebrow justify-content-center">Mark Your Calendar</span>
+          <h2 class="fw-bold mt-2">Important Dates &ndash; Upcoming Batch</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="seat-card text-center">
+              <div class="award-icon mx-auto"><i class="bi bi-pencil-square"></i></div>
+              <h6 class="fw-bold mt-3 mb-1">Application Deadline</h6>
+              <p class="mb-0 small text-muted">August 15, 2026</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="seat-card text-center">
+              <div class="award-icon mx-auto"><i class="bi bi-file-earmark-text-fill"></i></div>
+              <h6 class="fw-bold mt-3 mb-1">Placement Test</h6>
+              <p class="mb-0 small text-muted">August 20, 2026</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="seat-card text-center">
+              <div class="award-icon mx-auto"><i class="bi bi-list-check"></i></div>
+              <h6 class="fw-bold mt-3 mb-1">Merit List Announced</h6>
+              <p class="mb-0 small text-muted">August 25, 2026</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="seat-card text-center">
+              <div class="award-icon mx-auto"><i class="bi bi-mortarboard-fill"></i></div>
+              <h6 class="fw-bold mt-3 mb-1">Classes Begin</h6>
+              <p class="mb-0 small text-muted">September 1, 2026</p>
             </div>
           </div>
         </div>
@@ -508,6 +608,159 @@
       });
 
       calculate();
+    });
+  </script>
+
+  <script>
+    // Eligibility Quiz
+    document.addEventListener('DOMContentLoaded', function () {
+      var checkBtn = document.getElementById('checkEligibilityBtn');
+      var qualSelect = document.getElementById('quizQualification');
+      var marksSelect = document.getElementById('quizMarks');
+      var resultBox = document.getElementById('eligibilityResult');
+      var resultTitle = document.getElementById('eligibilityResultTitle');
+      var resultText = document.getElementById('eligibilityResultText');
+
+      if (!checkBtn) return;
+
+      checkBtn.addEventListener('click', function () {
+        var qual = qualSelect.value;
+        var marks = marksSelect.value;
+        var eligible = qual !== 'below-matric' && marks === '60-plus';
+
+        resultBox.classList.remove('eligible', 'not-eligible');
+
+        if (eligible) {
+          resultBox.classList.add('eligible', 'show');
+          resultTitle.textContent = 'You are likely eligible!';
+          resultText.textContent = 'Based on your answers, you meet the minimum criteria. Visit the Admissions Office or apply below to confirm your seat.';
+        } else {
+          resultBox.classList.add('not-eligible', 'show');
+          resultTitle.textContent = 'You may not meet the minimum criteria yet.';
+          resultText.textContent = 'Don\'t worry &mdash; contact our admissions office directly, as some requirements can vary by program.';
+        }
+      });
+    });
+
+    // Document Checklist Tracker (persists via localStorage)
+    document.addEventListener('DOMContentLoaded', function () {
+      var trackerList = document.getElementById('docTrackerList');
+      if (!trackerList) return;
+
+      var checkboxes = trackerList.querySelectorAll('input[type="checkbox"]');
+      var progressFill = document.getElementById('docProgressFill');
+      var progressLabel = document.getElementById('docProgressLabel');
+      var storageKey = 'fa-doc-tracker';
+
+      function loadState() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey)) || {};
+        } catch (e) {
+          return {};
+        }
+      }
+
+      function saveState(state) {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(state));
+        } catch (e) {
+          /* localStorage unavailable, ignore */
+        }
+      }
+
+      function updateProgress() {
+        var checkedCount = 0;
+        checkboxes.forEach(function (cb) {
+          var item = cb.closest('.doc-tracker-item');
+          if (cb.checked) {
+            checkedCount++;
+            item.classList.add('checked');
+          } else {
+            item.classList.remove('checked');
+          }
+        });
+
+        var percent = Math.round((checkedCount / checkboxes.length) * 100);
+        progressFill.style.width = percent + '%';
+        progressLabel.textContent = checkedCount + ' of ' + checkboxes.length + ' ready';
+      }
+
+      var savedState = loadState();
+      checkboxes.forEach(function (cb) {
+        if (savedState[cb.id]) {
+          cb.checked = true;
+        }
+        cb.addEventListener('change', function () {
+          var state = loadState();
+          state[cb.id] = cb.checked;
+          saveState(state);
+          updateProgress();
+        });
+      });
+
+      updateProgress();
+    });
+  </script>
+  <script>
+    // Page fade-in
+    window.addEventListener('load', function () {
+      document.body.classList.add('page-loaded');
+    });
+
+    // Scroll-reveal transitions for card elements
+    document.addEventListener('DOMContentLoaded', function () {
+      var revealSelectors = '.feature-card, .course-card, .team-card, .testimonial-card, ' +
+        '.achiever-card, .results-summary-card, .award-card, .mv-card, .eligibility-card, ' +
+        '.seat-card, .contact-info-card, .gallery-item, .batch-compare-card, .fee-calc-card, ' +
+        '.consultation-card, .selection-process-card, .countdown-card, .timeline-item, .course-finder-card';
+      var revealEls = document.querySelectorAll(revealSelectors);
+
+      if (!revealEls.length) return;
+
+      revealEls.forEach(function (el) {
+        el.classList.add('reveal');
+      });
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        revealEls.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        revealEls.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    });
+  </script>
+  <script>
+    // Scroll-reveal transitions (site-wide)
+    document.addEventListener('DOMContentLoaded', function () {
+      var revealTargets = document.querySelectorAll('main section, #hero, #cta, #page-banner');
+      revealTargets.forEach(function (el) {
+        el.classList.add('reveal-on-scroll');
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealTargets.forEach(function (el) {
+        observer.observe(el);
+      });
     });
   </script>
 </body>

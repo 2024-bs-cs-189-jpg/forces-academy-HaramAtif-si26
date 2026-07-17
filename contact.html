@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css" />
+  <noscript><style>body{opacity:1 !important;}</style></noscript>
 </head>
 <body>
   <!-- Floating Contact Buttons -->
@@ -89,7 +90,10 @@
               <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
               <div>
                 <h6 class="fw-bold mb-1">Email Us</h6>
-                <p class="mb-0 small">info@forcesacademy.edu.pk</p>
+                <p class="mb-0 small">
+                   info@forcesacademy<br>
+                    .edu.pk
+                      </p>
               </div>
             </div>
           </div>
@@ -103,8 +107,138 @@
             </div>
           </div>
         </div>
+
+        <!-- NEW FEATURE 1: Live online/offline status badge -->
+        <div class="text-center mt-4">
+          <span class="chat-status-badge" id="chatStatusBadge">
+            <span class="chat-status-dot"></span>
+            <span id="chatStatusText">Checking availability&hellip;</span>
+          </span>
+        </div>
       </div>
     </section>
+
+    <!-- NEW FEATURE 2: WhatsApp Quick-Chat buttons -->
+    <!-- WhatsApp Quick Chat -->
+<section id="quick-chat" class="py-6">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="section-eyebrow justify-content-center">
+                Faster Response
+            </span>
+
+            <h2 class="fw-bold mt-3">
+                Chat With Us on WhatsApp
+            </h2>
+
+            <p class="text-muted">
+                Choose your inquiry below and get an instant response from our team.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Admissions -->
+            <div class="col-md-6 col-lg-3">
+                <a href="https://wa.me/923000000000?text=Hi%2C%20I%27d%20like%20information%20about%20Admissions."
+                    target="_blank"
+                    class="chat-card text-decoration-none">
+
+                    <div class="chat-icon">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+
+                    <h5>Admissions</h5>
+
+                    <p>
+                        Admission process, eligibility and registration details.
+                    </p>
+
+                    <span class="chat-btn">
+                        Chat Now
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+
+                </a>
+            </div>
+
+            <!-- Fee -->
+            <div class="col-md-6 col-lg-3">
+                <a href="https://wa.me/923000000000?text=Hi%2C%20I%27d%20like%20details%20about%20Fee%20%26%20Payment."
+                    target="_blank"
+                    class="chat-card text-decoration-none">
+
+                    <div class="chat-icon">
+                        <i class="bi bi-credit-card-fill"></i>
+                    </div>
+
+                    <h5>Fee & Payment</h5>
+
+                    <p>
+                        Ask about fee structure and payment methods.
+                    </p>
+
+                    <span class="chat-btn">
+                        Chat Now
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+
+                </a>
+            </div>
+
+            <!-- Courses -->
+            <div class="col-md-6 col-lg-3">
+                <a href="https://wa.me/923000000000?text=Hi%2C%20I%27d%20like%20information%20about%20Courses."
+                    target="_blank"
+                    class="chat-card text-decoration-none">
+
+                    <div class="chat-icon">
+                        <i class="bi bi-book-fill"></i>
+                    </div>
+
+                    <h5>Courses</h5>
+
+                    <p>
+                        Explore available courses and training programs.
+                    </p>
+
+                    <span class="chat-btn">
+                        Chat Now
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+
+                </a>
+            </div>
+
+            <!-- General -->
+            <div class="col-md-6 col-lg-3">
+                <a href="https://wa.me/923000000000?text=Hi%2C%20I%20have%20a%20general%20question."
+                    target="_blank"
+                    class="chat-card text-decoration-none">
+
+                    <div class="chat-icon">
+                        <i class="bi bi-chat-dots-fill"></i>
+                    </div>
+
+                    <h5>General Help</h5>
+
+                    <p>
+                        Have another question? Contact us anytime.
+                    </p>
+
+                    <span class="chat-btn">
+                        Chat Now
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
     <!-- Contact form + Map -->
     <section id="contact-form-section" class="py-6">
@@ -196,6 +330,70 @@
       </div>
     </section>
 
+    <!-- NEW FEATURE 3: Contact-specific FAQ accordion -->
+    <section id="contact-faq" class="py-6" style="background-color:#ffffff;">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-eyebrow justify-content-center">Common Questions</span>
+          <h2 class="fw-bold mt-2">Before You Reach Out</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="accordion faq-accordion" id="contactFaq">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1">
+                    How quickly will I get a reply?
+                  </button>
+                </h2>
+                <div id="cfaq1" class="accordion-collapse collapse show" data-bs-parent="#contactFaq">
+                  <div class="accordion-body">
+                    We typically respond to WhatsApp messages within a few hours during office hours, and to email or form submissions within 1-2 working days.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq2">
+                    Can I visit the campus without an appointment?
+                  </button>
+                </h2>
+                <div id="cfaq2" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                  <div class="accordion-body">
+                    Walk-ins are welcome during office hours, but booking ahead via phone or WhatsApp helps us make sure a counsellor is available for you.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq3">
+                    Who do I contact for fee-related questions?
+                  </button>
+                </h2>
+                <div id="cfaq3" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                  <div class="accordion-body">
+                    Select "Fee &amp; Payment" as the subject in the form above, or use the Fee &amp; Payment WhatsApp quick-chat button, and our accounts desk will assist you.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq4">
+                    Do you respond on Sundays?
+                  </button>
+                </h2>
+                <div id="cfaq4" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                  <div class="accordion-body">
+                    Our office is closed on Sundays, so messages sent then are answered the next working day (Monday).
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer id="site-footer" class="pt-5 pb-4 text-white">
@@ -277,6 +475,93 @@
         setTimeout(function () {
           successMsg.classList.remove('show');
         }, 6000);
+      });
+    });
+  </script>
+
+  <script>
+    // NEW: Live "We're Online / Offline" status badge
+    document.addEventListener('DOMContentLoaded', function () {
+      var badge = document.getElementById('chatStatusBadge');
+      var text = document.getElementById('chatStatusText');
+      if (!badge || !text) return;
+
+      var dot = badge.querySelector('.chat-status-dot');
+      var now = new Date();
+      var day = now.getDay(); // 0 = Sunday ... 6 = Saturday
+      var hour = now.getHours();
+      var isSaturday = day === 6;
+      var closeHour = isSaturday ? 18 : 18; // 9 AM - 6 PM Mon-Sat per office hours
+      var isOpen = day !== 0 && hour >= 9 && hour < closeHour;
+
+      if (isOpen) {
+        text.textContent = "We're online now \u2014 message us for a quick reply";
+      } else {
+        if (dot) dot.style.backgroundColor = '#dc3545';
+        text.textContent = "We're offline right now \u2014 back Mon\u2013Sat, 9 AM";
+      }
+    });
+  </script>
+
+  <script>
+    // Page fade-in
+    window.addEventListener('load', function () {
+      document.body.classList.add('page-loaded');
+    });
+
+    // Scroll-reveal transitions for card elements
+    document.addEventListener('DOMContentLoaded', function () {
+      var revealSelectors = '.feature-card, .course-card, .team-card, .testimonial-card, ' +
+        '.achiever-card, .results-summary-card, .award-card, .mv-card, .eligibility-card, ' +
+        '.seat-card, .contact-info-card, .gallery-item, .batch-compare-card, .fee-calc-card, ' +
+        '.consultation-card, .selection-process-card, .countdown-card, .timeline-item, .course-finder-card';
+      var revealEls = document.querySelectorAll(revealSelectors);
+
+      if (!revealEls.length) return;
+
+      revealEls.forEach(function (el) {
+        el.classList.add('reveal');
+      });
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        revealEls.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        revealEls.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    });
+  </script>
+  <script>
+    // Scroll-reveal transitions (site-wide)
+    document.addEventListener('DOMContentLoaded', function () {
+      var revealTargets = document.querySelectorAll('main section, #hero, #cta, #page-banner');
+      revealTargets.forEach(function (el) {
+        el.classList.add('reveal-on-scroll');
+      });
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealTargets.forEach(function (el) {
+        observer.observe(el);
       });
     });
   </script>
