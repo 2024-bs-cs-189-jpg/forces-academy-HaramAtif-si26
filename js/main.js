@@ -20,70 +20,69 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ==========================
   // Animated Stats Counter
+  // (duration-based — every counter finishes in exactly 2 seconds,
+  // regardless of how big its target number is)
   // ==========================
-  const statsSection = document.querySelector("#stats");
-  const counters = document.querySelectorAll(".stat-number");
+  var statsSection = document.querySelector("#stats");
+  var counters = document.querySelectorAll(".stat-number");
+  var COUNTER_DURATION = 2000; // ms
 
-  function startCounters() {
+  function animateCounter(counter, duration) {
+    var target = parseInt(counter.dataset.target, 10);
+    var startText = counter.textContent.trim();
+    var symbol = startText.includes("%") ? "%" : startText.includes("+") ? "+" : "";
+    var startTime = null;
 
-    counters.forEach(counter => {
+    // Ease-out for a smoother "settle" near the end
+    function easeOutQuad(t) {
+      return t * (2 - t);
+    }
 
-      const text = counter.textContent.trim();
+    function step(timestamp) {
+      if (startTime === null) startTime = timestamp;
+      var elapsed = timestamp - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = easeOutQuad(progress);
+      var current = Math.floor(eased * target);
 
-      // Extract only number
-const target = parseInt(counter.dataset.target);
-      // Detect symbol (+ or %)
-      const symbol = text.includes("%") ? "%" : text.includes("+") ? "+" : "";
+      counter.textContent = current.toLocaleString() + symbol;
 
-      let current = 0;
-      const increment = Math.ceil(target / 100);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        counter.textContent = target.toLocaleString() + symbol;
+      }
+    }
 
-      const updateCounter = () => {
-
-        current += increment;
-
-        if (current >= target) {
-          counter.textContent = target + symbol;
-        } else {
-          counter.textContent = current + symbol;
-          requestAnimationFrame(updateCounter);
-        }
-
-      };
-
-      counter.textContent = "0";
-      updateCounter();
-
-    });
-
+    requestAnimationFrame(step);
   }
 
-  // Run animation only when section appears
+  function startCounters() {
+    counters.forEach(function (counter) {
+      counter.textContent = "0";
+      animateCounter(counter, COUNTER_DURATION);
+    });
+  }
+
+  // Run animation only once, when the stats section scrolls into view
   if ("IntersectionObserver" in window && statsSection) {
 
-    const observer = new IntersectionObserver(function(entries){
-
-      entries.forEach(function(entry){
-
-        if(entry.isIntersecting){
-
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
           startCounters();
           observer.unobserve(statsSection);
-
         }
-
       });
-
     }, {
       threshold: 0.4
     });
 
     observer.observe(statsSection);
 
-  } else {
-
+  } else if (statsSection) {
+    // Fallback for browsers without IntersectionObserver support
     startCounters();
-
   }
 
 });

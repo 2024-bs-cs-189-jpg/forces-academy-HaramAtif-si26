@@ -149,43 +149,6 @@
       </div>
     </section>
 
-    <section id="eligibility-quiz" class="py-6">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-7">
-            <div class="text-center mb-4">
-              <span class="section-eyebrow justify-content-center">Quick Check</span>
-              <h2 class="fw-bold mt-2">Am I Eligible?</h2>
-            </div>
-            <div class="eligibility-quiz-card">
-              <div class="mb-3">
-                <label for="quizQualification" class="form-label">Highest Qualification</label>
-                <select id="quizQualification" class="form-select">
-                  <option value="below-matric">Below Class 8</option>
-                  <option value="matric">Passed Class 8 or Matric</option>
-                  <option value="fsc">Passed FSc / Equivalent</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="quizMarks" class="form-label">Marks Percentage in Last Exam</label>
-                <select id="quizMarks" class="form-select">
-                  <option value="below-60">Below 60%</option>
-                  <option value="60-plus">60% or above</option>
-                </select>
-              </div>
-              <button type="button" id="checkEligibilityBtn" class="btn btn-portal fw-semibold px-4">
-                Check My Eligibility
-              </button>
-              <div class="eligibility-quiz-result" id="eligibilityResult">
-                <strong id="eligibilityResultTitle"></strong>
-                <p class="mb-0 small mt-1" id="eligibilityResultText"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="seat-availability" class="py-6">
       <div class="container">
         <div class="text-center mb-5">
@@ -356,50 +319,6 @@
       </div>
     </section>
 
-    <section id="fee-calculator" class="py-6">
-      <div class="container">
-        <div class="text-center mb-5">
-          <span class="section-eyebrow justify-content-center">Plan Your Budget</span>
-          <h2 class="fw-bold mt-2">Fee Calculator</h2>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="fee-calc-card">
-              <div class="row g-3 mb-4">
-                <div class="col-md-6">
-                  <label for="calcCourse" class="form-label">Select Course</label>
-                  <select id="calcCourse" class="form-select">
-                    <option value="5000|3500">Matric Science / Arts</option>
-                    <option value="6000|4500">FSc Pre-Medical</option>
-                    <option value="6000|4500">FSc Pre-Engineering</option>
-                    <option value="3000|5000">Entry Test Preparation</option>
-                    <option value="4000|7000">ISSB &amp; Interview Prep</option>
-                  </select>
-                </div>
-                <div class="col-md-6 d-flex flex-column justify-content-end">
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" id="calcHostel" value="12000">
-                    <label class="form-check-label" for="calcHostel">Add Hostel (Rs. 12,000/month)</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="calcTransport" value="3500">
-                    <label class="form-check-label" for="calcTransport">Add Transport (Rs. 3,500/month)</label>
-                  </div>
-                </div>
-              </div>
-              <div class="fee-calc-result d-flex justify-content-between align-items-center flex-wrap gap-2">
-                <div>
-                  <div class="fee-calc-result-label">Estimated First Month Total</div>
-                  <small class="text-muted">Admission Fee (one-time) + Monthly Fee + optional add-ons</small>
-                </div>
-                <div class="fee-calc-result-amount" id="calcTotal">Rs. 0</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="important-dates" class="py-6" style="background-color:#ffffff;">
       <div class="container">
         <div class="text-center mb-5">
@@ -433,81 +352,6 @@
               <div class="award-icon mx-auto"><i class="bi bi-mortarboard-fill"></i></div>
               <h6 class="fw-bold mt-3 mb-1">Classes Begin</h6>
               <p class="mb-0 small text-muted">September 1, 2026</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="py-6" style="background-color:#ffffff;">
-      <div class="container">
-        <div class="text-center mb-5">
-          <span class="section-eyebrow justify-content-center">Got Questions?</span>
-          <h2 class="fw-bold mt-2">Frequently Asked Questions</h2>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <div class="accordion faq-accordion" id="admissionsFaq">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                    Can I apply if I haven't taken my Matric result yet?
-                  </button>
-                </h2>
-                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#admissionsFaq">
-                  <div class="accordion-body">
-                    Yes. Students awaiting their Matric result can register provisionally. Final admission is confirmed once the result and required documents are submitted.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                    Is hostel accommodation compulsory?
-                  </button>
-                </h2>
-                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#admissionsFaq">
-                  <div class="accordion-body">
-                    No, hostel and transport are optional facilities. Day-scholar students only pay the course admission and monthly fee.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                    Can I switch courses after enrolling?
-                  </button>
-                </h2>
-                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#admissionsFaq">
-                  <div class="accordion-body">
-                    Yes, course changes are possible within the first two weeks of a batch, subject to seat availability. Please speak with the admissions office to arrange the switch.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                    Do you offer any fee discounts or scholarships?
-                  </button>
-                </h2>
-                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#admissionsFaq">
-                  <div class="accordion-body">
-                    Merit-based discounts are available for high-achieving students, and need-based concessions may be granted on a case-by-case basis. Contact the admissions office for details.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                    How long does the admission process take?
-                  </button>
-                </h2>
-                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#admissionsFaq">
-                  <div class="accordion-body">
-                    Most applications are processed within 2-3 working days of submitting all required documents and clearing the placement test.
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -561,14 +405,6 @@
             <a href="https://www.facebook.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="https://www.youtube.com/@forcesacademyfaisalabad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-12">
-          <div class="footer-map-wrap">
-            <iframe src="https://www.google.com/maps?q=Faisalabad,Punjab,Pakistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Forces Academy Faisalabad Location"></iframe>
-          </div>
         </div>
       </div>
       <hr class="footer-divider my-4" />
@@ -579,69 +415,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var courseSelect = document.getElementById('calcCourse');
-      var hostelCheck = document.getElementById('calcHostel');
-      var transportCheck = document.getElementById('calcTransport');
-      var totalEl = document.getElementById('calcTotal');
-
-      if (!courseSelect || !totalEl) return;
-
-      function formatPKR(amount) {
-        return 'Rs. ' + amount.toLocaleString('en-PK');
-      }
-
-      function calculate() {
-        var parts = courseSelect.value.split('|');
-        var admissionFee = parseInt(parts[0], 10);
-        var monthlyFee = parseInt(parts[1], 10);
-        var total = admissionFee + monthlyFee;
-
-        if (hostelCheck.checked) total += parseInt(hostelCheck.value, 10);
-        if (transportCheck.checked) total += parseInt(transportCheck.value, 10);
-
-        totalEl.textContent = formatPKR(total);
-      }
-
-      [courseSelect, hostelCheck, transportCheck].forEach(function (el) {
-        el.addEventListener('change', calculate);
-      });
-
-      calculate();
-    });
-  </script>
-
-  <script>
-    // Eligibility Quiz
-    document.addEventListener('DOMContentLoaded', function () {
-      var checkBtn = document.getElementById('checkEligibilityBtn');
-      var qualSelect = document.getElementById('quizQualification');
-      var marksSelect = document.getElementById('quizMarks');
-      var resultBox = document.getElementById('eligibilityResult');
-      var resultTitle = document.getElementById('eligibilityResultTitle');
-      var resultText = document.getElementById('eligibilityResultText');
-
-      if (!checkBtn) return;
-
-      checkBtn.addEventListener('click', function () {
-        var qual = qualSelect.value;
-        var marks = marksSelect.value;
-        var eligible = qual !== 'below-matric' && marks === '60-plus';
-
-        resultBox.classList.remove('eligible', 'not-eligible');
-
-        if (eligible) {
-          resultBox.classList.add('eligible', 'show');
-          resultTitle.textContent = 'You are likely eligible!';
-          resultText.textContent = 'Based on your answers, you meet the minimum criteria. Visit the Admissions Office or apply below to confirm your seat.';
-        } else {
-          resultBox.classList.add('not-eligible', 'show');
-          resultTitle.textContent = 'You may not meet the minimum criteria yet.';
-          resultText.textContent = 'Don\'t worry &mdash; contact our admissions office directly, as some requirements can vary by program.';
-        }
-      });
-    });
-
     // Document Checklist Tracker (persists via localStorage)
     document.addEventListener('DOMContentLoaded', function () {
       var trackerList = document.getElementById('docTrackerList');

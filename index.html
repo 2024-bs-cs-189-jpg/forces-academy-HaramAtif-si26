@@ -173,33 +173,33 @@
   </div>
 
   <!-- Stats Strip -->
-<section id="stats" class="py-5">
-  <div class="container">
-    <div class="row text-center gy-4">
+  <section id="stats" class="py-5">
+    <div class="container">
+      <div class="row text-center gy-4">
 
-      <div class="col-6 col-md-3">
-        <h2 class="stat-number fw-bold mb-0" data-target="15">0+</h2>
-        <p class="stat-label mb-0">Years of Excellence</p>
+        <div class="col-6 col-md-3">
+          <h2 class="stat-number fw-bold mb-0" data-target="5000">0+</h2>
+          <p class="stat-label mb-0">Number of Students</p>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h2 class="stat-number fw-bold mb-0" data-target="15">0+</h2>
+          <p class="stat-label mb-0">Years of Excellence</p>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h2 class="stat-number fw-bold mb-0" data-target="6">0</h2>
+          <p class="stat-label mb-0">Courses Offered</p>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <h2 class="stat-number fw-bold mb-0" data-target="98">0%</h2>
+          <p class="stat-label mb-0">Success Rate</p>
+        </div>
+
       </div>
-
-      <div class="col-6 col-md-3">
-        <h2 class="stat-number fw-bold mb-0" data-target="2500">0+</h2>
-        <p class="stat-label mb-0">Cadets Trained</p>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <h2 class="stat-number fw-bold mb-0" data-target="98">0%</h2>
-        <p class="stat-label mb-0">Selection Rate</p>
-      </div>
-
-      <div class="col-6 col-md-3">
-        <h2 class="stat-number fw-bold mb-0" data-target="60">0+</h2>
-        <p class="stat-label mb-0">Expert Instructors</p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- About Preview -->
   <section id="about-preview" class="py-6">
@@ -381,82 +381,106 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- Testimonials Carousel -->
   <section id="testimonials" class="py-6" style="background-color:#ffffff;">
     <div class="container">
       <div class="text-center mb-5">
         <span class="section-eyebrow justify-content-center">Success Stories</span>
         <h2 class="fw-bold mt-2">What Our Students Say</h2>
       </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <div class="testimonial-card">
-            <div class="testimonial-quote-icon"><i class="bi bi-quote"></i></div>
-            <p class="testimonial-text mb-4">"The written test coaching here is unmatched. My instructors knew exactly what the PAF entry test needed, and I cleared it on my first attempt."</p>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fm=jpg&q=80&w=200&auto=format&fit=crop" alt="Bilal Hussain" class="testimonial-avatar" />
-              <div>
-                <div class="testimonial-name">Bilal Hussain</div>
-                <div class="testimonial-role">Selected &ndash; Pakistan Air Force</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="testimonial-card">
-            <div class="testimonial-quote-icon"><i class="bi bi-quote"></i></div>
-            <p class="testimonial-text mb-4">"The ISSB prep gave me real confidence for group tasks and the interview. The mock sessions felt just like the actual board."</p>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?fm=jpg&q=80&w=200&auto=format&fit=crop" alt="Usman Tariq" class="testimonial-avatar" />
-              <div>
-                <div class="testimonial-name">Usman Tariq</div>
-                <div class="testimonial-role">Selected &ndash; Pakistan Army</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="testimonial-card">
-            <div class="testimonial-quote-icon"><i class="bi bi-quote"></i></div>
-            <p class="testimonial-text mb-4">"Discipline is what sets this academy apart. The daily PT sessions and structured routine prepared me for far more than just the physical test."</p>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fm=jpg&q=80&w=200&auto=format&fit=crop" alt="Mahnoor Iqbal" class="testimonial-avatar" />
-              <div>
-                <div class="testimonial-name">Mahnoor Iqbal</div>
-                <div class="testimonial-role">Selected &ndash; Army Medical Corps</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Next Batch Countdown -->
-  <section id="batch-countdown" class="pb-6">
-    <div class="container">
-      <div class="countdown-card text-center">
-        <span class="section-eyebrow justify-content-center">Limited Time</span>
-        <h2 class="fw-bold mt-2 mb-4">Next Batch Starts In</h2>
-        <div class="countdown-units" id="countdownUnits">
-          <div class="countdown-unit">
-            <div class="countdown-unit-num" id="cdDays">00</div>
-            <div class="countdown-unit-label">Days</div>
+      <div id="testimonialsCarousel" class="carousel slide testimonial-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-8">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon"><i class="bi bi-quote"></i></div>
+                  <p class="testimonial-text mb-4">"The written test coaching here is unmatched. My instructors knew exactly what the PAF entry test needed, and I cleared it on my first attempt."</p>
+                  <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?fm=jpg&q=80&w=200&auto=format&fit=crop" alt="Bilal Hussain" class="testimonial-avatar" />
+                    <div>
+                      <div class="testimonial-name">Bilal Hussain</div>
+                      <div class="testimonial-role">Selected &ndash; Pakistan Air Force</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="countdown-unit">
-            <div class="countdown-unit-num" id="cdHours">00</div>
-            <div class="countdown-unit-label">Hours</div>
+
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-8">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon"><i class="bi bi-quote"></i></div>
+                  <p class="testimonial-text mb-4">"The ISSB prep gave me real confidence for group tasks and the interview. The mock sessions felt just like the actual board."</p>
+                  <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?fm=jpg&q=80&w=200&auto=format&fit=crop" alt="Usman Tariq" class="testimonial-avatar" />
+                    <div>
+                      <div class="testimonial-name">Usman Tariq</div>
+                      <div class="testimonial-role">Selected &ndash; Pakistan Army</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="countdown-unit">
-            <div class="countdown-unit-num" id="cdMinutes">00</div>
-            <div class="countdown-unit-label">Minutes</div>
+
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-8">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon"><i class="bi bi-quote"></i></div>
+                  <p class="testimonial-text mb-4">"Discipline is what sets this academy apart. The daily PT sessions and structured routine prepared me for far more than just the physical test."</p>
+                  <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?fm=jpg&q=80&w=200&auto=format&fit=crop" alt="Mahnoor Iqbal" class="testimonial-avatar" />
+                    <div>
+                      <div class="testimonial-name">Mahnoor Iqbal</div>
+                      <div class="testimonial-role">Selected &ndash; Army Medical Corps</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="countdown-unit">
-            <div class="countdown-unit-num" id="cdSeconds">00</div>
-            <div class="countdown-unit-label">Seconds</div>
+
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-8">
+                <div class="testimonial-card">
+                  <div class="testimonial-quote-icon"><i class="bi bi-quote"></i></div>
+                  <p class="testimonial-text mb-4">"FSc Pre-Engineering here built my basics from scratch. By the time I sat the entry test, the math and physics sections felt easy."</p>
+                  <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fm=jpg&q=80&w=200&auto=format&fit=crop" alt="Ayesha Noor" class="testimonial-avatar" />
+                    <div>
+                      <div class="testimonial-name">Ayesha Noor</div>
+                      <div class="testimonial-role">FSc Pre-Engineering &ndash; Batch 2024</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
-        <p class="text-muted mt-4 mb-0 small">Secure your seat before the new batch begins &mdash; enrollment is first-come, first-served.</p>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+          <span class="testimonial-nav-icon" aria-hidden="true"><i class="bi bi-chevron-left"></i></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+          <span class="testimonial-nav-icon" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        <div class="carousel-indicators testimonial-indicators">
+          <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonial 1"></button>
+          <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
+          <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
+          <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="3" aria-label="Testimonial 4"></button>
+        </div>
       </div>
     </div>
   </section>
@@ -534,13 +558,6 @@
             <a href="https://www.youtube.com/@forcesacademyfaisalabad" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <i class="bi bi-youtube"></i>
             </a>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-12">
-          <div class="footer-map-wrap">
-            <iframe src="https://www.google.com/maps?q=Faisalabad,Punjab,Pakistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Forces Academy Faisalabad Location"></iframe>
           </div>
         </div>
       </div>
