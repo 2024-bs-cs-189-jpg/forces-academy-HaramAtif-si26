@@ -16,6 +16,24 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       link.classList.remove("active");
     }
+    // ==========================
+  // Back to Top Button
+  // ==========================
+  var backToTopBtn = document.getElementById('backToTopBtn');
+
+  if (backToTopBtn) {
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
   });
 
   // ==========================

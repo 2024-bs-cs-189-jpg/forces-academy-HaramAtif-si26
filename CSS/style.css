@@ -774,7 +774,52 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================= */
 
 /* ---------- Filter buttons ---------- */
+/* ---------- Filter tabs (segmented style) ---------- */
+.gallery-filter-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
 .gallery-filter-btn {
+  border: none;
+  color: var(--fa-green-dark);
+  background-color: transparent;
+  font-weight: 600;
+  border-radius: 40px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.gallery-filter-btn i {
+  font-size: 0.95rem;
+}
+
+.gallery-filter-btn:hover {
+  background-color: rgba(217, 164, 65, 0.12);
+  transform: none;
+}
+
+.gallery-filter-btn.active {
+  background-color: var(--fa-gold);
+  color: var(--fa-green-dark);
+  box-shadow: 0 4px 12px rgba(217, 164, 65, 0.4);
+}
+
+.gallery-filter-btn.active:hover {
+  background-color: var(--fa-gold);
+}
+
+/* Standalone action buttons (Surprise Me) keep the old pill-outline look */
+.gallery-action-btn {
   border: 1.5px solid var(--fa-green);
   color: var(--fa-green);
   background-color: transparent;
@@ -785,16 +830,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.gallery-filter-btn:hover {
+.gallery-action-btn:hover {
   background-color: rgba(14, 77, 51, 0.08);
   transform: translateY(-2px);
-}
-
-.gallery-filter-btn.active {
-  background-color: var(--fa-green);
-  border-color: var(--fa-green);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(14, 77, 51, 0.25);
 }
 
 /* ---------- Image grid ---------- */
@@ -1726,6 +1764,217 @@ body {
 }
 
 /* =========================================================
+   Round 4: more gallery + contact features
+   ========================================================= */
+
+/* ---------- Gallery: download button ---------- */
+.gallery-download-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  z-index: 2;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-download-btn:hover {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+/* ---------- Gallery: featured badge ---------- */
+.gallery-featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 56px;
+  background-color: var(--fa-gold);
+  color: var(--fa-green-dark);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 0.3rem 0.65rem;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+/* ---------- Gallery: slideshow ---------- */
+.slideshow-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: var(--fa-gold);
+  z-index: 2000;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ---------- Contact: visit booking ---------- */
+.visit-booking-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Contact: WhatsApp quick templates ---------- */
+.whatsapp-template-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(37, 211, 102, 0.08);
+  border: 1.5px solid #25d366;
+  color: #128c3e;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.whatsapp-template-btn:hover {
+  background-color: #25d366;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Round 5: unique differentiators
+   ========================================================= */
+
+/* ---------- Gallery: Scrapbook (polaroid) mode ---------- */
+#galleryGrid.scrapbook-view .gallery-item {
+  background-color: #fffdf8;
+  padding: 10px 10px 34px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+  transform: rotate(var(--polaroid-tilt, -2deg));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#galleryGrid.scrapbook-view .gallery-item:hover {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+#galleryGrid.scrapbook-view .gallery-item:nth-child(3n+1) { --polaroid-tilt: -2.5deg; }
+#galleryGrid.scrapbook-view .gallery-item:nth-child(3n+2) { --polaroid-tilt: 1.8deg; }
+#galleryGrid.scrapbook-view .gallery-item:nth-child(3n) { --polaroid-tilt: -1.2deg; }
+
+#galleryGrid.scrapbook-view .gallery-img-wrap {
+  border-radius: 2px;
+  height: 210px;
+}
+
+#galleryGrid.scrapbook-view .gallery-caption {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--fa-ink);
+}
+
+#galleryGrid.scrapbook-view .gallery-overlay {
+  position: static;
+  background: none;
+  opacity: 1;
+  padding: 0.75rem 0.25rem 0;
+  text-align: center;
+}
+
+#galleryGrid.scrapbook-view .gallery-overlay .gallery-caption {
+  color: var(--fa-ink) !important;
+}
+
+/* ---------- Contact: quick feedback rating ---------- */
+.feedback-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2.25rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.feedback-stars {
+  font-size: 2rem;
+  display: inline-flex;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.feedback-stars i {
+  color: #d9d9d9;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.feedback-stars i.hovered,
+.feedback-stars i.selected {
+  color: var(--fa-gold);
+  transform: scale(1.1);
+}
+
+.feedback-thankyou {
+  display: none;
+  margin-top: 1rem;
+  color: var(--fa-green);
+  font-weight: 600;
+}
+
+.feedback-thankyou.show {
+  display: block;
+}
+
+/* ---------- Contact: language toggle ---------- */
+.lang-toggle-wrap {
+  display: inline-flex;
+  background-color: rgba(7, 51, 31, 0.06);
+  border-radius: 30px;
+  padding: 4px;
+}
+
+.lang-toggle-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--fa-green-dark);
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-toggle-btn.active {
+  background-color: var(--fa-green);
+  color: #fff;
+}
+
+[lang="ur"] {
+  font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+  direction: rtl;
+  display: none;
+}
+
+.show-urdu [lang="ur"] {
+  display: block;
+}
+
+.show-urdu [lang="en"] {
+  display: none;
+}
+
+/* =========================================================
    Site-wide new features
    ========================================================= */
 
@@ -1908,19 +2157,6 @@ body {
   font-size: 1.2rem;
 }
 
-.achiever-card.rank-1 .achiever-rank {
-  background-color: var(--fa-gold);
-  color: var(--fa-green-dark);
-  width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-}
-
-.achiever-card.rank-1 {
-  border-top: 4px solid var(--fa-gold);
-  transform: translateY(-8px);
-}
-
 .achiever-name {
   font-weight: 700;
   color: var(--fa-green-dark);
@@ -2038,12 +2274,17 @@ body {
 /* ---------- Gallery: filter count badge ---------- */
 .gallery-filter-btn .filter-count {
   display: inline-block;
-  margin-left: 6px;
+  margin-left: 2px;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 0.1rem 0.45rem;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(7, 51, 31, 0.12);
+}
+
+.gallery-filter-btn.active .filter-count {
+  background-color: rgba(7, 51, 31, 0.18);
+  color: var(--fa-green-dark);
 }
 
 .gallery-filter-btn:not(.active) .filter-count {
@@ -2101,8 +2342,6 @@ body {
   #results-filter,
   #top-achievers,
   #batch-comparison,
-  #verify-result,
-  #share-and-alerts,
   #cta,
   .btn-print-results,
   .btn-export-results {
@@ -2414,147 +2653,52 @@ body {
 .fee-table tbody tr.fee-table-divider:hover td {
   background-color: rgba(14, 77, 51, 0.06) !important;
 }
-/* ================================
-   WhatsApp Chat Cards
-================================ */
-
-.chat-card{
-    background:#fff;
-    border-radius:20px;
-    padding:30px 22px;
-    text-align:center;
-    display:block;
-    height:100%;
-    color:#222;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:0.35s;
-    border-top:4px solid var(--fa-gold);
+/* ---------- Smooth Scroll ---------- */
+html {
+  scroll-behavior: smooth;
 }
 
-.chat-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
-    color:inherit;
-}
-
-.chat-icon{
-    width:70px;
-    height:70px;
-    margin:auto;
-    border-radius:50%;
-    background:var(--fa-green);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:var(--fa-gold);
-    font-size:30px;
-    margin-bottom:20px;
-    transition:.3s;
-}
-
-.chat-card:hover .chat-icon{
-    background:var(--fa-gold);
-    color:var(--fa-green-dark);
-}
-
-.chat-card h5{
-    color:var(--fa-green-dark);
-    font-weight:700;
-    margin-bottom:15px;
-}
-
-.chat-card p{
-    color:#666;
-    font-size:15px;
-    line-height:1.6;
-    min-height:70px;
-}
-
-.chat-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    color:var(--fa-gold-dark);
-    font-weight:700;
-    margin-top:10px;
-}
-
-.chat-card:hover .chat-btn{
-    color:var(--fa-green);
-}
-/* ---------- Home: testimonials carousel ---------- */
-.testimonial-carousel {
-  padding-bottom: 2.5rem;
-  position: relative;
-}
-
-.testimonial-carousel .carousel-item {
-  padding: 0.5rem 3.25rem;
-}
-
-.testimonial-nav-icon {
-  width: 44px;
-  height: 44px;
+/* ---------- Back to Top Button ---------- */
+.back-to-top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 150px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  border: none;
   background-color: var(--fa-green);
   color: var(--fa-gold);
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease, transform 0.3s ease,
+    visibility 0.3s ease, background-color 0.2s ease;
+  z-index: 1049;
 }
 
-.testimonial-carousel .carousel-control-prev,
-.testimonial-carousel .carousel-control-next {
-  width: auto;
+.back-to-top-btn.show {
   opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.testimonial-carousel .carousel-control-prev:hover .testimonial-nav-icon,
-.testimonial-carousel .carousel-control-next:hover .testimonial-nav-icon {
+.back-to-top-btn:hover {
   background-color: var(--fa-gold);
   color: var(--fa-green-dark);
-  transform: scale(1.08);
-}
-
-.testimonial-carousel .carousel-control-prev {
-  left: -8px;
-}
-
-.testimonial-carousel .carousel-control-next {
-  right: -8px;
-}
-
-.testimonial-indicators {
-  position: static;
-  margin-top: 1.75rem;
-  gap: 8px;
-}
-
-.testimonial-indicators [data-bs-target] {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background-color: rgba(7, 51, 31, 0.2);
-  opacity: 1;
-  border: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.testimonial-indicators [data-bs-target].active {
-  background-color: var(--fa-gold);
-  transform: scale(1.3);
 }
 
 @media (max-width: 767.98px) {
-  .testimonial-carousel .carousel-item {
-    padding: 0.5rem 2.5rem;
-  }
-
-  .testimonial-nav-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
+  .back-to-top-btn {
+    right: 14px;
+    bottom: 130px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.05rem;
   }
 }

@@ -24,6 +24,10 @@
       <i class="bi bi-telephone-fill"></i>
     </a>
   </div>
+  <!-- Back to Top Button -->
+  <button type="button" id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top" title="Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
   <nav class="navbar navbar-expand-lg sticky-top navbar-dark" id="mainNav">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">
@@ -41,7 +45,6 @@
           <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="btn btn-portal fw-semibold px-3 ms-lg-2" href="#">Student Portal</a></li>
         </ul>
       </div>
     </div>
@@ -77,33 +80,20 @@
       </div>
     </section>
 
-    <!-- NEW FEATURE 1: Photo of the Month highlight banner -->
-    <section id="photo-highlight" class="pb-6">
-      <div class="container">
-        <div class="photo-highlight-banner">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fm=jpg&q=80&w=1600&auto=format&fit=crop" alt="ISSB group discussion practice" />
-          <div class="photo-highlight-content">
-            <span class="photo-highlight-badge">Photo of the Month</span>
-            <h4 class="fw-bold mb-1">ISSB Group Discussion Practice</h4>
-            <p class="mb-0 small">Candidates sharpening group-task and communication skills ahead of the interview stage.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="gallery-filters" class="py-4">
       <div class="container">
-        <!-- NEW FEATURE 2: Search bar -->
         <div class="gallery-search-wrap">
           <i class="bi bi-search"></i>
           <input type="text" id="gallerySearchInput" placeholder="Search photos e.g. PT, ISSB, Convocation..." />
         </div>
         <p class="text-center text-muted mb-3" id="galleryResultsCounter">Showing 12 of 12 photos</p>
-        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 mb-3" id="filterButtons">
-          <button type="button" class="btn gallery-filter-btn active" data-filter="all">All <span class="filter-count" data-count-for="all"></span></button>
-          <button type="button" class="btn gallery-filter-btn" data-filter="events">Events <span class="filter-count" data-count-for="events"></span></button>
-          <button type="button" class="btn gallery-filter-btn" data-filter="sports">Sports <span class="filter-count" data-count-for="sports"></span></button>
-          <button type="button" class="btn gallery-filter-btn" data-filter="academic">Academic <span class="filter-count" data-count-for="academic"></span></button>
+        <div class="d-flex justify-content-center mb-3">
+          <div class="gallery-filter-tabs" id="filterButtons">
+            <button type="button" class="btn gallery-filter-btn active" data-filter="all"><i class="bi bi-grid-fill"></i>All <span class="filter-count" data-count-for="all"></span></button>
+            <button type="button" class="btn gallery-filter-btn" data-filter="events"><i class="bi bi-calendar-event-fill"></i>Events <span class="filter-count" data-count-for="events"></span></button>
+            <button type="button" class="btn gallery-filter-btn" data-filter="sports"><i class="bi bi-trophy-fill"></i>Sports <span class="filter-count" data-count-for="sports"></span></button>
+            <button type="button" class="btn gallery-filter-btn" data-filter="academic"><i class="bi bi-book-fill"></i>Academic <span class="filter-count" data-count-for="academic"></span></button>
+          </div>
         </div>
         <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
           <div class="d-flex gap-2">
@@ -114,7 +104,7 @@
               <i class="bi bi-list-ul"></i>
             </button>
           </div>
-          <button type="button" class="btn gallery-filter-btn" id="randomPhotoBtn">
+          <button type="button" class="btn gallery-action-btn" id="randomPhotoBtn">
             <i class="bi bi-shuffle me-1"></i>Surprise Me
           </button>
         </div>
@@ -301,17 +291,6 @@
       </div>
     </section>
 
-    <!-- NEW FEATURE 3: Recently Viewed tracker -->
-    <section id="recentlyViewedSection" class="pb-6 d-none">
-      <div class="container">
-        <div class="text-center mb-4">
-          <span class="section-eyebrow justify-content-center">Just Viewed</span>
-          <h4 class="fw-bold mt-2">Recently Viewed Photos</h4>
-        </div>
-        <div class="row g-3" id="recentlyViewedRow"></div>
-      </div>
-    </section>
-
     <section id="upload-photos" class="pb-6">
       <div class="container">
         <div class="row justify-content-center">
@@ -452,7 +431,7 @@
 
       if (!galleryItems.length) return;
 
-      // NEW: combined category filter + live search
+      // Combined category filter + live search
       function updateGalleryDisplay() {
         var term = searchInput ? searchInput.value.trim().toLowerCase() : '';
         var visibleCount = 0;
@@ -533,51 +512,6 @@
         randomItem.classList.add('shuffle-highlight');
         randomItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
-    });
-  </script>
-
-  <script>
-    // NEW: Recently Viewed tracker (sessionStorage)
-    document.addEventListener('DOMContentLoaded', function () {
-      var recentSection = document.getElementById('recentlyViewedSection');
-      var recentRow = document.getElementById('recentlyViewedRow');
-      if (!recentSection || !recentRow) return;
-
-      function getRecent() {
-        try {
-          return JSON.parse(sessionStorage.getItem('fa_recent_photos') || '[]');
-        } catch (e) {
-          return [];
-        }
-      }
-
-      function renderRecent() {
-        var items = getRecent();
-        if (!items.length) {
-          recentSection.classList.add('d-none');
-          return;
-        }
-        recentSection.classList.remove('d-none');
-        recentRow.innerHTML = items.map(function (item) {
-          return '<div class="col-6 col-md-3"><div class="gallery-item"><div class="gallery-img-wrap"><img src="' +
-            item.img + '" alt="' + item.title + '" class="gallery-img" /><div class="gallery-overlay"><span class="gallery-caption">' +
-            item.title + '</span></div></div></div></div>';
-        }).join('');
-      }
-
-      document.querySelectorAll('.gallery-img-wrap.glightbox').forEach(function (link) {
-        link.addEventListener('click', function () {
-          var title = link.getAttribute('data-title') || 'Photo';
-          var imgEl = link.querySelector('img');
-          var img = imgEl ? imgEl.src : '';
-          var items = getRecent().filter(function (it) { return it.title !== title; });
-          items.unshift({ title: title, img: img });
-          items = items.slice(0, 4);
-          sessionStorage.setItem('fa_recent_photos', JSON.stringify(items));
-        });
-      });
-
-      renderRecent();
     });
   </script>
 
