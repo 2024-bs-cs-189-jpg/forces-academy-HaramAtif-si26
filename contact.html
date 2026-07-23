@@ -313,6 +313,8 @@
             <a href="https://www.facebook.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="https://www.youtube.com/@forcesacademyfaisalabad" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
       </div>
       <hr class="footer-divider my-4" />
       <p class="text-center mb-0 small">&copy; 2026 Forces Academy Faisalabad. All Rights Reserved.</p>
@@ -352,7 +354,6 @@
   </script>
 
   <script>
-    // NEW: Live "We're Online / Offline" status badge
     document.addEventListener('DOMContentLoaded', function () {
       var badge = document.getElementById('chatStatusBadge');
       var text = document.getElementById('chatStatusText');
@@ -360,10 +361,10 @@
 
       var dot = badge.querySelector('.chat-status-dot');
       var now = new Date();
-      var day = now.getDay(); // 0 = Sunday ... 6 = Saturday
+      var day = now.getDay();
       var hour = now.getHours();
       var isSaturday = day === 6;
-      var closeHour = isSaturday ? 18 : 18; // 9 AM - 6 PM Mon-Sat per office hours
+      var closeHour = isSaturday ? 18 : 18;
       var isOpen = day !== 0 && hour >= 9 && hour < closeHour;
 
       if (isOpen) {
@@ -376,12 +377,10 @@
   </script>
 
   <script>
-    // Page fade-in
     window.addEventListener('load', function () {
       document.body.classList.add('page-loaded');
     });
 
-    // Scroll-reveal transitions for card elements
     document.addEventListener('DOMContentLoaded', function () {
       var revealSelectors = '.feature-card, .course-card, .team-card, .testimonial-card, ' +
         '.achiever-card, .results-summary-card, .award-card, .mv-card, .eligibility-card, ' +
@@ -416,7 +415,6 @@
     });
   </script>
   <script>
-    // Scroll-reveal transitions (site-wide)
     document.addEventListener('DOMContentLoaded', function () {
       var revealTargets = document.querySelectorAll('main section, #hero, #cta, #page-banner');
       revealTargets.forEach(function (el) {
