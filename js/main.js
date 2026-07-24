@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       link.classList.remove("active");
     }
-    // ==========================
-  // Back to Top Button
+  }); // <-- forEach yahin close (Back to Top ab is ke andar nahi hai)
+
+  // ==========================
+  // Back to Top Button (ab sirf ek baar bind hoga)
   // ==========================
   var backToTopBtn = document.getElementById('backToTopBtn');
 
@@ -34,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-  });
 
   // ==========================
   // Animated Stats Counter
