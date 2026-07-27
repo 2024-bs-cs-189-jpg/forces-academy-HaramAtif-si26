@@ -104,4 +104,34 @@ document.addEventListener("DOMContentLoaded", function () {
     startCounters();
   }
 
+  // ==========================
+  // Student Portal — "Coming Soon" popup
+  // ==========================
+  var portalBtns = document.querySelectorAll('.nav-portal-btn');
+
+  if (portalBtns.length) {
+    var portalToast = document.createElement('div');
+    portalToast.className = 'portal-toast';
+    portalToast.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Student Portal is coming soon &mdash; stay tuned!';
+    document.body.appendChild(portalToast);
+
+    var portalToastTimer = null;
+
+    portalBtns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        portalToast.classList.remove('show');
+        // force reflow so the animation restarts on repeated clicks
+        void portalToast.offsetWidth;
+        portalToast.classList.add('show');
+
+        clearTimeout(portalToastTimer);
+        portalToastTimer = setTimeout(function () {
+          portalToast.classList.remove('show');
+        }, 3200);
+      });
+    });
+  }
+
 });
