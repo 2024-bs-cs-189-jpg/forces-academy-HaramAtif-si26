@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%2307331f' d='M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5z'/><path fill='none' stroke='%23d9a441' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M8 12l2.5 2.5L16 9'/></svg>" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forces Academy Faisalabad</title>
   <!-- Bootstrap 5 CSS -->
@@ -486,6 +487,39 @@
     </div>
   </section>
 
+  <!-- Next Batch Countdown -->
+  <section id="next-batch" class="py-6">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="countdown-card text-center">
+            <span class="section-eyebrow justify-content-center">Don't Miss Out</span>
+            <h4 class="fw-bold mt-2 mb-4">Next Batch Starts In</h4>
+            <div class="countdown-units">
+              <div class="countdown-unit">
+                <div class="countdown-unit-num" id="cdDays">00</div>
+                <div class="countdown-unit-label">Days</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="countdown-unit-num" id="cdHours">00</div>
+                <div class="countdown-unit-label">Hours</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="countdown-unit-num" id="cdMinutes">00</div>
+                <div class="countdown-unit-label">Minutes</div>
+              </div>
+              <div class="countdown-unit">
+                <div class="countdown-unit-num" id="cdSeconds">00</div>
+                <div class="countdown-unit-label">Seconds</div>
+              </div>
+            </div>
+            <p class="small text-muted mt-4 mb-0">Classes begin September 1, 2026 &mdash; secure your seat before the merit list closes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Banner -->
   <section id="cta" class="py-6 text-center text-white">
     <div class="container">
@@ -581,9 +615,7 @@
 
       if (!daysEl) return;
 
-      var targetDate = new Date();
-      targetDate.setDate(targetDate.getDate() + 21);
-      targetDate.setHours(9, 0, 0, 0);
+      var targetDate = new Date('2026-09-01T09:00:00');
 
       function pad(num) {
         return String(num).padStart(2, '0');

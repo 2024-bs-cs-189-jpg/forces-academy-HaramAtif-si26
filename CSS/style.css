@@ -2239,6 +2239,82 @@ body {
   letter-spacing: 0.4px;
 }
 
+/* ---------- Testimonial carousel controls (previously unstyled — invisible on white bg) ---------- */
+.testimonial-carousel {
+  padding-bottom: 3.5rem;
+}
+
+.testimonial-carousel .carousel-control-prev,
+.testimonial-carousel .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  width: auto;
+  opacity: 1;
+}
+
+.testimonial-carousel .carousel-control-prev {
+  left: -8px;
+}
+
+.testimonial-carousel .carousel-control-next {
+  right: -8px;
+}
+
+@media (max-width: 991.98px) {
+  .testimonial-carousel .carousel-control-prev {
+    left: 0;
+  }
+  .testimonial-carousel .carousel-control-next {
+    right: 0;
+  }
+}
+
+.testimonial-nav-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--fa-surface);
+  color: var(--fa-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  border: 1.5px solid rgba(7, 51, 31, 0.1);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.testimonial-carousel .carousel-control-prev:hover .testimonial-nav-icon,
+.testimonial-carousel .carousel-control-next:hover .testimonial-nav-icon {
+  background-color: var(--fa-green);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.testimonial-indicators {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+}
+
+.testimonial-indicators [data-bs-target] {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: rgba(7, 51, 31, 0.2);
+  border: none;
+  opacity: 1;
+  margin: 0 5px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.testimonial-indicators [data-bs-target].active {
+  background-color: var(--fa-gold);
+  transform: scale(1.2);
+}
+
 /* ---------- Top achievers (Results page) ---------- */
 .achiever-card {
   background-color: var(--fa-surface);
@@ -2248,6 +2324,42 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   position: relative;
   height: 100%;
+  border-top: 3px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.achiever-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(7, 51, 31, 0.12);
+}
+
+.achiever-card.rank-1 {
+  border-top-color: var(--fa-gold);
+  box-shadow: 0 10px 28px rgba(217, 164, 65, 0.25);
+}
+
+.achiever-card.rank-1::before {
+  content: "\2605";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--fa-gold);
+  color: var(--fa-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  box-shadow: 0 4px 10px rgba(217, 164, 65, 0.4);
+}
+
+.achiever-card.rank-1 .achiever-rank {
+  background-color: var(--fa-gold);
+  color: var(--fa-green-dark);
 }
 
 .achiever-rank {
