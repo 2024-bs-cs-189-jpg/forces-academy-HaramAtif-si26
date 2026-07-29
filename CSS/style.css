@@ -2362,6 +2362,24 @@ body {
   color: var(--fa-green-dark);
 }
 
+.achiever-photo {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--fa-green);
+  display: block;
+  margin: 0 auto -18px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 6px 16px rgba(7, 51, 31, 0.18);
+}
+
+.achiever-card.rank-1 .achiever-photo {
+  border-color: var(--fa-gold);
+  box-shadow: 0 6px 20px rgba(217, 164, 65, 0.4);
+}
+
 .achiever-rank {
   width: 48px;
   height: 48px;
@@ -2375,6 +2393,9 @@ body {
   justify-content: center;
   margin: 0 auto 1rem;
   font-size: 1.2rem;
+  position: relative;
+  z-index: 2;
+  border: 3px solid var(--fa-surface);
 }
 
 .achiever-name {
