@@ -16,8 +16,7 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 | Home Page | About Page | Results Page |
 |---|---|---|
-| ![Home Page](./images/home.html.png) | ![About Page](./images/about.html.png) | ![Results Page](./images/result.html.png) |
-
+| ![Home Page](./images/home.png) | ![About Page](./images/about.png) | ![Results Page](./images/results.png) |
 > Screenshots are stored in the `/images` folder in the project root.
 
 ---
@@ -110,9 +109,9 @@ forces-academy-HaramAtif-si26/
 ├── CSS/
 │   └── style.css
 ├── images/
-│   ├── home.html.png
-│   ├── about.html.png
-│   └── result.html.png
+│   ├── home.png
+│   ├── about.png
+│   └── results.png
 ├── js/
 │   └── main.js
 └── README.md
