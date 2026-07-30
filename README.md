@@ -1,4 +1,4 @@
-# 🛡️ Forces Academy Faisalabad — Website
+# Forces Academy Faisalabad — Website
 
 A complete, responsive multi-page website built for **Forces Academy Faisalabad**, a defence forces preparation academy offering Army, Air Force & Navy entry-test coaching, ISSB interview grooming, and academic (Matric/FSc) programs in Faisalabad, Pakistan.
 
@@ -6,25 +6,23 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 ---
 
-## 🔗 Live Site
+## Live Site
 
 **[View Live Website →](https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/)**
 
 ---
 
-## 📸 Screenshots
-
-## 📸 Screenshots
+## Screenshots
 
 | Home Page | About Page | Results Page |
 |---|---|---|
 | ![Home Page](./images/home.html.png) | ![About Page](./images/about.html.png) | ![Results Page](./images/result.html.png) |
 
-> 📁 Screenshots are stored in the `/images` folder in the project root.
+> Screenshots are stored in the `/images` folder in the project root.
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - **HTML5** — semantic, multi-page structure (7 pages)
 - **CSS3** — custom stylesheet (`CSS/style.css`) with CSS variables, responsive breakpoints (1440px / 768px / 375px), and animations
@@ -37,7 +35,7 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 ---
 
-## ✨ Features
+## Features
 
 **Site-wide**
 - Fully responsive design (tested at 375px / 768px / 1440px)
@@ -98,7 +96,7 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 forces-academy-HaramAtif-si26/
@@ -122,7 +120,7 @@ forces-academy-HaramAtif-si26/
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 1. Clone the repo:
    ```bash
@@ -136,7 +134,7 @@ forces-academy-HaramAtif-si26/
 
 ---
 
-## 👤 Built By
+##  Built By
 
 **Built by:** Haram Atif  
 **Code Saviours SI-26 | 2026**
