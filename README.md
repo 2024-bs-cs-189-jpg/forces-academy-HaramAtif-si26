@@ -16,9 +16,8 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 | Home Page | About Page | Results Page |
 |---|---|---|
-| ![Home Page](./screenshots/home.png) | ![About Page](./screenshots/about.png) | ![Results Page](./screenshots/results.png) |
-
-> 📁 Screenshots are in the `/screenshots` folder in the repo root. Feel free to add more pages (Courses, Admissions, Gallery, Contact).
+| ![Home Page](./images/home.html.png) | ![About Page](./images/about.html.png) | ![Results Page](./images/result.html.png) |
+> 📁 Screenshots are in the `/images` folder in the repo root. Feel free to add more pages (Courses, Admissions, Gallery, Contact).
 
 ---
 
