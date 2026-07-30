@@ -1,80 +1,105 @@
-# Forces Academy Faisalabad — Website
+# 🛡️ Forces Academy Faisalabad — Website
 
-A responsive, multi-page front-end website built for **Forces Academy Faisalabad**, a coaching institute that prepares students for Army, Air Force, and Navy written tests, physical training, and ISSB interviews. This project was built as part of the **Code Saviours SI-26** internship program (Frontend Track).
+A complete, responsive multi-page website built for **Forces Academy Faisalabad**, a defence forces preparation academy offering Army, Air Force & Navy entry-test coaching, ISSB interview grooming, and academic (Matric/FSc) programs in Faisalabad, Pakistan.
 
-🔗 **Live Site:** [https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/](https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/)
+This project was built as part of the **Code Saviours SI-26** internship program (Frontend Track), covering real-world frontend development: multi-page architecture, responsive design, interactive UI components, and client-side data handling — all without a backend, using static HTML/CSS/JS + Bootstrap 5.
+
+---
+
+## 🔗 Live Site
+
+**[View Live Website →](https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/)**
 
 ---
 
 ## 📸 Screenshots
 
-| Home | Results | Contact |
+| Home Page | Results Page | Contact Page |
 |---|---|---|
-| ![Home page](screenshots/home.png) | ![Results page](screenshots/results.png) | ![Contact page](screenshots/contact.png) |
+| ![Home Page](./screenshots/home.png) | ![Results Page](./screenshots/results.png) | ![Contact Page](./screenshots/contact.png) |
 
-> Add your own screenshot images to a `screenshots/` folder in the repo root (e.g. `screenshots/home.png`, `screenshots/results.png`, `screenshots/contact.png`) so they render above. Feel free to add more than three.
+> 📁 Add your actual screenshots to a `/screenshots` folder in the repo root, named `home.png`, `results.png`, `contact.png` (or update the filenames above to match yours). At least 3 pages are required — feel free to add more (About, Courses, Admissions, Gallery).
 
 ---
 
-## 🛠️ Tech Stack
+## 🧰 Tech Stack
 
-- **HTML5** — semantic, 7-page multi-page site
-- **CSS3** — custom stylesheet (`CSS/style.css`), CSS variables for theming, responsive breakpoints (1440px / 768px / 375px)
-- **[Bootstrap 5.3.0](https://getbootstrap.com/)** — grid system, navbar, carousel, accordion, forms
-- **[Bootstrap Icons 1.11.3](https://icons.getbootstrap.com/)** — iconography throughout
-- **Google Fonts** — Playfair Display (headings), Inter (body text)
-- **Vanilla JavaScript** (`js/main.js`) — no frameworks, no build step
-- **[GLightbox](https://biati-digital.github.io/glightbox/)** — lightbox for the gallery page
-- **GitHub Pages** — static hosting / deployment
+- **HTML5** — semantic, multi-page structure (7 pages)
+- **CSS3** — custom stylesheet (`CSS/style.css`) with CSS variables, responsive breakpoints (1440px / 768px / 375px), and animations
+- **Bootstrap 5.3** — grid system, components (navbar, accordion, carousel, forms)
+- **Bootstrap Icons** — iconography throughout the site
+- **JavaScript (Vanilla)** — no frameworks; all interactivity hand-written (`js/main.js`)
+- **Google Fonts** — Playfair Display (headings) + Inter (body text)
+- **GLightbox** — lightbox gallery viewer (Gallery page)
+- **GitHub Pages** — static site hosting
 
 ---
 
 ## ✨ Features
 
 **Site-wide**
-- Fully responsive 7-page site: Home, About, Courses, Admissions, Results, Gallery, Contact
-- Sticky navbar with active-page highlighting and a visually distinct **Student Portal** button (gold outline pill) that shows a "Coming Soon" popup toast on click
-- Scroll-reveal animations and page fade-in transitions
-- Floating WhatsApp + Call buttons, and a Back-to-Top button
+- Fully responsive design (tested at 375px / 768px / 1440px)
+- Sticky navbar with active-page highlighting and a visually distinct **Student Portal** button (gold outline pill) that shows a "Coming Soon" popup on click
+- Floating WhatsApp & Call quick-contact buttons
+- Smooth scroll behavior + floating "Back to Top" button
+- Page fade-in and scroll-reveal animations on all sections
 - Custom inline SVG favicon
-- Consistent green/gold brand theme and typography across every page
 
 **Home**
-- Animated stats counters (students trained, years of excellence, courses, success rate)
-- "Selection Process" step tracker and a scrolling course ticker
+- Hero section with CTA buttons
+- Animated stats counter (students, years, courses, success rate)
+- Selection process step tracker + scrolling course ticker
 - Testimonials carousel with custom-styled navigation arrows and dots
 - "Next Batch Starts In" live countdown timer
 
 **About**
-- Company history timeline, mission & vision cards, achievements, and leadership team
+- Academy history timeline (2011–2026)
+- Mission & Vision cards
+- Achievements/awards grid
+- Leadership team profiles
 
 **Courses**
-- Course comparison table and a "Which Batch Timing Suits You?" finder
+- Course cards grid with tags
+- Side-by-side course comparison table
+- Batch timing selector (Morning/Evening/Weekend) with live result panel
 
 **Admissions**
-- Step-by-step "How to Apply" guide, live seat-availability progress bars
-- Interactive required-documents checklist (progress saved via `localStorage`)
-- Fee structure table and key admissions dates
+- Step-by-step "How to Apply" guide
+- Eligibility criteria cards
+- Live seat availability progress bars
+- Interactive document checklist tracker (saves progress via `localStorage`)
+- Full fee structure table
+- Important dates timeline
 
 **Results**
-- Top position holders with photos and gold highlight for 1st place
-- Year-over-year batch comparison chart
-- Searchable / filterable results table (course, year, status), CSV export, and a print-friendly view
+- Summary stat cards (total, selected, qualified, success rate)
+- Top position holders showcase with photos and a gold highlight for 1st place
+- Year-on-year batch comparison bars (2026 vs 2025 vs 2024 vs 2023 batches)
+- Searchable & filterable results table (by name, course, year, status)
+- Export to CSV + print-friendly view
 
 **Gallery**
-- Category filters, live search, grid/list view toggle, like button, random-shuffle, and a lightbox powered by GLightbox
+- Category filter tabs (Events / Sports / Academic) with live counts
+- Live caption search
+- Grid/List view toggle
+- "Surprise Me" random photo shuffle
+- Like button per photo
+- Lightbox full-size photo viewer (GLightbox)
 
 **Contact**
-- Validated contact form with a success message
-- Live "we're online / offline" status badge based on office hours
-- FAQ accordion and a static "Open in Google Maps" card (kept lightweight — no embedded iframe, so the page loads in a single request)
+- Contact info cards
+- Live "We're Online/Offline" status badge (based on office hours)
+- Validated contact form with success confirmation
+- Static "Open in Google Maps" card (kept lightweight — no embedded iframe, so the page loads in a single request)
+- Office hours table
+- Contact-specific FAQ accordion
 
 ---
 
 ## 📁 Project Structure
 
 ```
-forces-academy/
+forces-academy-HaramAtif-si26/
 ├── index.html
 ├── about.html
 ├── courses.html
@@ -84,19 +109,31 @@ forces-academy/
 ├── contact.html
 ├── CSS/
 │   └── style.css
-└── js/
-    └── main.js
+├── js/
+│   └── main.js
+├── screenshots/
+│   ├── home.png
+│   ├── results.png
+│   └── contact.png
+└── README.md
 ```
 
 ---
 
 ## 🚀 Running Locally
 
-No build step required — it's a static site.
-
-1. Clone the repo
-2. Open `index.html` directly in a browser, or serve the folder with any static server (e.g. VS Code's Live Server extension)
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/2024-bs-cs-189-jpg/forces-academy-HaramAtif-si26.git
+   ```
+2. Open `index.html` directly in your browser, **or** serve it with a local server (recommended, avoids CORS/localStorage quirks):
+   ```bash
+   npx serve .
+   ```
+3. Navigate between pages using the navbar.
 
 ---
 
-**Built by:** Haram Atif | Code Saviours SI-26 | 2026
+## 👤 Built By
+
+**Built by:** Hezline | **Code Saviours SI-26** | **2026**
