@@ -14,10 +14,13 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 ## 📸 Screenshots
 
-| Home Page | About Page | Result Page |
+## 📸 Screenshots
+
+| Home Page | About Page | Results Page |
 |---|---|---|
-| ![Home Page](./images/home.html.png) | ![About Page](./images/about.html.png) | ![Result Page](./images/result.html.png) |
-> 📁 Screenshots are in the `/images` folder in the repo root. Feel free to add more pages (Courses, Admissions, Gallery, Contact).
+| ![Home Page](./images/home.html.png) | ![About Page](./images/about.html.png) | ![Results Page](./images/result.html.png) |
+
+> 📁 Screenshots are stored in the `/images` folder in the project root.
 
 ---
 
@@ -108,12 +111,12 @@ forces-academy-HaramAtif-si26/
 ├── contact.html
 ├── CSS/
 │   └── style.css
+├── images/
+│   ├── home.html.png
+│   ├── about.html.png
+│   └── result.html.png
 ├── js/
 │   └── main.js
-├── screenshots/
-│   ├── home.png
-│   ├── about.png
-│   └── results.png
 └── README.md
 ```
 
@@ -135,4 +138,5 @@ forces-academy-HaramAtif-si26/
 
 ## 👤 Built By
 
-**Built by:** Haram Atif | **Code Saviours SI-26** | **2026**
+**Built by:** Haram Atif  
+**Code Saviours SI-26 | 2026**
