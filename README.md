@@ -14,9 +14,9 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 ## 📸 Screenshots
 
-| Home Page | About Page | Results Page |
+| Home Page | About Page | Result Page |
 |---|---|---|
-| ![Home Page](./images/home.html.png) | ![About Page](./images/about.html.png) | ![Results Page](./images/result.html.png) |
+| ![Home Page](./images/home.html.png) | ![About Page](./images/about.html.png) | ![Result Page](./images/result.html.png) |
 > 📁 Screenshots are in the `/images` folder in the repo root. Feel free to add more pages (Courses, Admissions, Gallery, Contact).
 
 ---
