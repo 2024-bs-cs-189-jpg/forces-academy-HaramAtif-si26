@@ -395,6 +395,14 @@
         revealEls.forEach(function (el) {
           observer.observe(el);
         });
+
+        // Safety net: force-reveal anything the observer hasn't caught yet
+        // (e.g. full-page screenshot tools that resize the viewport instantly)
+        setTimeout(function () {
+          revealEls.forEach(function (el) {
+            el.classList.add('is-visible');
+          });
+        }, 1200);
       } else {
         revealEls.forEach(function (el) {
           el.classList.add('is-visible');
@@ -459,6 +467,13 @@
       revealTargets.forEach(function (el) {
         observer.observe(el);
       });
+
+      // Safety net: force-reveal anything the observer hasn't caught yet
+      setTimeout(function () {
+        revealTargets.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }, 1200);
     });
   </script>
 </body>
