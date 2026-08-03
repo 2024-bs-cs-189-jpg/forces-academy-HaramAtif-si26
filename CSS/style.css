@@ -12,6 +12,146 @@
   --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
+/* =========================================================
+   Dark Mode (Week 6) — all dark-mode colors live here
+   ========================================================= */
+body.dark-mode {
+  --fa-cream: #10151b;
+  --fa-ink: #e9e7e0;
+  --fa-surface: #1a232c;
+  --fa-card-border: rgba(255, 255, 255, 0.1);
+  background-color: var(--fa-cream);
+}
+
+body.dark-mode .stat-label,
+body.dark-mode .seat-status-text,
+body.dark-mode .team-title,
+body.dark-mode .achiever-detail,
+body.dark-mode .testimonial-text,
+body.dark-mode .results-summary-label,
+body.dark-mode .gallery-results-count,
+body.dark-mode .text-muted {
+  color: rgba(233, 231, 224, 0.65) !important;
+}
+
+body.dark-mode .course-card,
+body.dark-mode .feature-card,
+body.dark-mode .team-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .achiever-card,
+body.dark-mode .results-summary-card,
+body.dark-mode .award-card,
+body.dark-mode .mv-card,
+body.dark-mode .eligibility-card,
+body.dark-mode .seat-card,
+body.dark-mode .contact-info-card,
+body.dark-mode .batch-compare-card,
+body.dark-mode .fee-calc-card,
+body.dark-mode .contact-form-card,
+body.dark-mode .results-filter-bar,
+body.dark-mode .course-finder-card,
+body.dark-mode .static-map-card,
+body.dark-mode .upload-cta-card,
+body.dark-mode .faq-accordion .accordion-button,
+body.dark-mode .faq-accordion .accordion-body,
+body.dark-mode .gallery-filter-tabs,
+body.dark-mode .office-hours-table,
+body.dark-mode .syllabus-card,
+body.dark-mode .countdown-card {
+  background-color: var(--fa-surface) !important;
+  border-color: var(--fa-card-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .static-map-card h6,
+body.dark-mode .static-map-card p,
+body.dark-mode .office-hours-table .day-label,
+body.dark-mode .achiever-name,
+body.dark-mode .team-card h5,
+body.dark-mode .course-card h5,
+body.dark-mode .feature-card h5 {
+  color: var(--fa-ink);
+}
+
+body.dark-mode .results-table tbody tr,
+body.dark-mode .results-table tbody td,
+body.dark-mode .fee-table tbody tr,
+body.dark-mode .fee-table tbody td,
+body.dark-mode .fee-table tbody th,
+body.dark-mode .compare-table tbody td {
+  background-color: var(--fa-surface) !important;
+  color: var(--fa-ink) !important;
+  border-color: var(--fa-card-border);
+}
+
+body.dark-mode .fee-table tbody tr:hover,
+body.dark-mode .fee-table tbody tr:hover td {
+  background-color: rgba(217, 164, 65, 0.1) !important;
+}
+
+/* Headings, labels, and names that used a fixed green text color
+   (designed for white cards) need to switch to the light ink color
+   now that their card/surface backgrounds turn dark. */
+body.dark-mode .eligibility-card h5,
+body.dark-mode .results-filter-bar .form-label,
+body.dark-mode .office-hours-table .day-label,
+body.dark-mode .timeline-year,
+body.dark-mode .contact-form-card .form-label,
+body.dark-mode .course-finder-card .form-label,
+body.dark-mode .course-finder-result-title,
+body.dark-mode .fee-calc-card .form-label,
+body.dark-mode .fee-calc-result-label,
+body.dark-mode .fee-calc-result-amount,
+body.dark-mode .seat-card h6,
+body.dark-mode .success-breakdown-header .course-name,
+body.dark-mode .batch-compare-label,
+body.dark-mode .testimonial-name,
+body.dark-mode .achiever-name,
+body.dark-mode .static-map-card h6,
+body.dark-mode .office-hours-table,
+body.dark-mode .contact-quick-link span,
+body.dark-mode .results-summary-number,
+body.dark-mode .stat-number,
+body.dark-mode .apply-step h6 {
+  color: var(--fa-ink) !important;
+}
+
+/* Accordion (FAQ) — collapsed question text and body copy need to flip too */
+body.dark-mode .faq-accordion .accordion-button {
+  color: var(--fa-ink) !important;
+}
+
+body.dark-mode .faq-accordion .accordion-body {
+  color: var(--fa-ink) !important;
+}
+
+/* Badges/status pills that sit on cards with a low-opacity tinted
+   background — brighten the tint and text so they stay legible */
+body.dark-mode .selection-status-badge {
+  background-color: rgba(217, 164, 65, 0.18);
+  color: var(--fa-gold);
+}
+
+body.dark-mode .status-badge.status-selected {
+  background-color: rgba(46, 204, 113, 0.18);
+  color: #6fe3a0;
+}
+
+body.dark-mode .status-badge.status-qualified {
+  background-color: rgba(217, 164, 65, 0.18);
+  color: var(--fa-gold);
+}
+
+body.dark-mode .status-badge.status-not-selected {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(233, 231, 224, 0.75);
+}
+
+body.dark-mode .status-badge.status-in-process {
+  background-color: rgba(28, 107, 72, 0.25);
+  color: #7fd6ae;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -88,6 +228,28 @@ h1, h2, h3, h4, h5, h6 {
 
 #mainNav .navbar-nav {
   gap: 4px;
+}
+
+.theme-toggle-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--fa-gold);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  transition: background-color 0.2s ease, transform 0.3s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(217, 164, 65, 0.18);
+  border-color: var(--fa-gold);
+  transform: rotate(20deg);
 }
 
 #mainNav .nav-portal-btn {
@@ -2983,5 +3145,96 @@ html {
     width: 42px;
     height: 42px;
     font-size: 1.05rem;
+  }
+}
+
+/* =========================================================
+   Week 6 — Page Load Animations (Home page)
+   ========================================================= */
+
+/* Hero heading fades in on page load (runs once body.page-loaded is set) */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-in {
+  opacity: 0;
+}
+
+body.page-loaded .hero-fade-in {
+  animation: heroFadeIn 0.9s ease 0.15s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-in {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Stats cards slide up as they come into view */
+@keyframes statSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-slide-up {
+  opacity: 0;
+}
+
+.stat-slide-up.is-visible {
+  animation: statSlideUp 0.6s ease forwards;
+}
+
+/* Course cards on the Home page appear one by one with a short delay between each */
+@keyframes cardFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-card {
+  opacity: 0;
+}
+
+.stagger-card.is-visible {
+  animation: cardFadeInUp 0.6s ease forwards;
+}
+
+#courses-preview .col-md-4:nth-child(1) .stagger-card.is-visible {
+  animation-delay: 0s;
+}
+
+#courses-preview .col-md-4:nth-child(2) .stagger-card.is-visible {
+  animation-delay: 0.18s;
+}
+
+#courses-preview .col-md-4:nth-child(3) .stagger-card.is-visible {
+  animation-delay: 0.36s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-slide-up,
+  .stagger-card {
+    opacity: 1;
+    animation: none;
   }
 }

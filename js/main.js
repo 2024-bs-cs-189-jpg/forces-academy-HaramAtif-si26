@@ -105,6 +105,36 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ==========================
+  // Dark Mode Toggle (Week 6)
+  // ==========================
+  var themeToggleBtn = document.getElementById('themeToggleBtn');
+
+  function setThemeIcon(isDark) {
+    if (!themeToggleBtn) return;
+    var icon = themeToggleBtn.querySelector('i');
+    if (!icon) return;
+    // Sun icon shown in dark mode, moon icon shown in light mode
+    icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+  }
+
+  if (themeToggleBtn) {
+    setThemeIcon(document.body.classList.contains('dark-mode'));
+
+    themeToggleBtn.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      var isDark = document.body.classList.contains('dark-mode');
+
+      try {
+        localStorage.setItem('fa-dark-mode', isDark ? 'true' : 'false');
+      } catch (e) {
+        /* localStorage unavailable, ignore */
+      }
+
+      setThemeIcon(isDark);
+    });
+  }
+
+  // ==========================
   // Student Portal — "Coming Soon" popup
   // ==========================
   var portalBtns = document.querySelectorAll('.nav-portal-btn');
