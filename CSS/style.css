@@ -112,8 +112,32 @@ body.dark-mode .office-hours-table,
 body.dark-mode .contact-quick-link span,
 body.dark-mode .results-summary-number,
 body.dark-mode .stat-number,
-body.dark-mode .apply-step h6 {
+body.dark-mode .apply-step h6,
+body.dark-mode .selection-step-label {
   color: var(--fa-ink) !important;
+}
+
+/* Defensive, blanket fix: any heading or paragraph sitting inside a
+   card/section — regardless of which specific card class it's in —
+   must use the light ink color once its background goes dark.
+   (Catches Bootstrap's own default .card text color, which does not
+   follow our --fa-ink variable unless forced here.) */
+body.dark-mode .card,
+body.dark-mode .card h1,
+body.dark-mode .card h2,
+body.dark-mode .card h3,
+body.dark-mode .card h4,
+body.dark-mode .card h5,
+body.dark-mode .card h6,
+body.dark-mode .card p,
+body.dark-mode section h1,
+body.dark-mode section h2,
+body.dark-mode section h3,
+body.dark-mode section h4,
+body.dark-mode section h5,
+body.dark-mode section h6,
+body.dark-mode section p:not(.testimonial-text):not(.lead) {
+  color: var(--fa-ink);
 }
 
 /* Accordion (FAQ) — collapsed question text and body copy need to flip too */
@@ -257,6 +281,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--fa-gold) !important;
   background-color: transparent !important;
   font-weight: 700;
+}
+
+body.dark-mode #mainNav .nav-portal-btn {
+  box-shadow: 0 0 12px rgba(217, 164, 65, 0.35);
 }
 
 #mainNav .nav-portal-btn:hover {
