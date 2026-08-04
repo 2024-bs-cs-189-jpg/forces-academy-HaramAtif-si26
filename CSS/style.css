@@ -137,7 +137,7 @@ body.dark-mode section h4,
 body.dark-mode section h5,
 body.dark-mode section h6,
 body.dark-mode section p:not(.testimonial-text):not(.lead) {
-  color: var(--fa-ink);
+  color: var(--fa-ink) !important;
 }
 
 /* Accordion (FAQ) — collapsed question text and body copy need to flip too */
@@ -146,6 +146,48 @@ body.dark-mode .faq-accordion .accordion-button {
 }
 
 body.dark-mode .faq-accordion .accordion-body {
+  color: var(--fa-ink) !important;
+}
+
+/* Outline-style buttons/badges that used dark green border+text on a
+   transparent background — nearly invisible once the page behind them
+   goes dark. Switch them to gold, which reads clearly either way. */
+body.dark-mode .btn-outline-portal,
+body.dark-mode .gallery-action-btn,
+body.dark-mode .view-toggle-btn,
+body.dark-mode .results-filter-bar .btn-reset-filters,
+body.dark-mode .static-map-cta,
+body.dark-mode .gallery-filter-btn:not(.active) {
+  border-color: var(--fa-gold) !important;
+  color: var(--fa-gold) !important;
+}
+
+body.dark-mode .view-toggle-btn.active,
+body.dark-mode .view-toggle-btn:hover,
+body.dark-mode .btn-outline-portal:hover,
+body.dark-mode .results-filter-bar .btn-reset-filters:hover {
+  background-color: var(--fa-gold) !important;
+  color: var(--fa-green-dark) !important;
+}
+
+body.dark-mode .gallery-filter-btn:not(.active) .filter-count {
+  background-color: rgba(217, 164, 65, 0.15);
+  color: var(--fa-gold);
+}
+
+body.dark-mode .testimonial-nav-icon {
+  color: var(--fa-gold);
+  border-color: var(--fa-card-border);
+}
+
+body.dark-mode .testimonial-carousel .carousel-control-prev:hover .testimonial-nav-icon,
+body.dark-mode .testimonial-carousel .carousel-control-next:hover .testimonial-nav-icon {
+  background-color: var(--fa-gold);
+  color: var(--fa-green-dark);
+}
+
+body.dark-mode .office-hours-table .day-label,
+body.dark-mode .office-hours-table td {
   color: var(--fa-ink) !important;
 }
 
