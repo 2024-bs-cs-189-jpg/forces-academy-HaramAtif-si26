@@ -3308,3 +3308,47 @@ body.page-loaded .hero-fade-in {
     animation: none;
   }
 }
+/* ---- Dark mode fixes---- */
+
+body.dark-mode .faq-accordion .accordion-item {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  border: 1px solid var(--fa-card-border);
+}
+
+body.dark-mode .btn-print-results,
+body.dark-mode .btn-export-results {
+  border-color: var(--fa-gold) !important;
+  color: var(--fa-gold) !important;
+}
+body.dark-mode .btn-print-results:hover,
+body.dark-mode .btn-export-results:hover {
+  background-color: var(--fa-gold) !important;
+  color: var(--fa-green-dark) !important;
+}
+
+body.dark-mode .hero-badge {
+  background-color: #f7f5ef !important;
+}
+body.dark-mode .hero-badge-num {
+  color: var(--fa-green-dark) !important;
+}
+body.dark-mode .hero-badge-label {
+  color: var(--fa-green) !important;
+}
+
+body.dark-mode .contact-info-card h6,
+body.dark-mode .contact-info-card p {
+  color: var(--fa-ink) !important;
+}
+
+body.dark-mode .chat-status-badge {
+  background-color: rgba(217, 164, 65, 0.12);
+  color: var(--fa-gold) !important;
+}
+
+body.dark-mode .office-hours-table td,
+body.dark-mode .office-hours-table tr {
+  color: var(--fa-ink) !important;
+  background-color: var(--fa-surface) !important;
+  border-color: var(--fa-card-border) !important;
+}
