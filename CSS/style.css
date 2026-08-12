@@ -578,7 +578,35 @@ body.dark-mode #mainNav .nav-portal-btn {
 .feature-card:hover .feature-icon i {
   color: var(--fa-green-dark);
 }
+.announcement-card {
+  display: flex;
+  flex-direction: column;
+}
 
+.announcement-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fa-gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.announcement-link {
+  color: var(--fa-green);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.announcement-link:hover {
+  color: var(--fa-gold-dark);
+  transform: translateX(3px);
+}
+
+body.dark-mode .announcement-date {
+  color: var(--fa-gold);
+}
 /* ---------- Course Cards ---------- */
 .course-card {
   background-color: var(--fa-surface);

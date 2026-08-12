@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       link.classList.remove("active");
     }
-  }); // <-- forEach yahin close (Back to Top ab is ke andar nahi hai)
+  });
 
   // ==========================
-  // Back to Top Button (ab sirf ek baar bind hoga)
+  // Back to Top Button
   // ==========================
   var backToTopBtn = document.getElementById('backToTopBtn');
 
@@ -39,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ==========================
   // Animated Stats Counter
-  // (duration-based — every counter finishes in exactly 2 seconds,
-  // regardless of how big its target number is)
   // ==========================
   var statsSection = document.querySelector("#stats");
   var counters = document.querySelectorAll(".stat-number");
@@ -52,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var symbol = startText.includes("%") ? "%" : startText.includes("+") ? "+" : "";
     var startTime = null;
 
-    // Ease-out for a smoother "settle" near the end
     function easeOutQuad(t) {
       return t * (2 - t);
     }
@@ -83,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Run animation only once, when the stats section scrolls into view
   if ("IntersectionObserver" in window && statsSection) {
 
     var observer = new IntersectionObserver(function (entries) {
@@ -100,12 +96,11 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(statsSection);
 
   } else if (statsSection) {
-    // Fallback for browsers without IntersectionObserver support
     startCounters();
   }
 
   // ==========================
-  // Dark Mode Toggle (Week 6)
+  // Dark Mode Toggle (Week 6 — hardened Week 7)
   // ==========================
   var themeToggleBtn = document.getElementById('themeToggleBtn');
 
@@ -113,55 +108,33 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!themeToggleBtn) return;
     var icon = themeToggleBtn.querySelector('i');
     if (!icon) return;
-    // Sun icon shown in dark mode, moon icon shown in light mode
     icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
   }
 
   if (themeToggleBtn) {
     setThemeIcon(document.body.classList.contains('dark-mode'));
 
-    themeToggleBtn.addEventListener('click', function () {
-      document.body.classList.toggle('dark-mode');
-      var isDark = document.body.classList.contains('dark-mode');
+    // Guard: agar kabhi ye script accidentally dobara chal jaye (duplicate
+    // main.js include, ya koi aur script isi button pe listener laga de),
+    // to ye check dusri baar bind hone se rok deta hai. Iske bina, ek click
+    // do listeners chala deta — matlab dark-mode ON->OFF->ON, yani net mein
+    // kuch change nahi hota (ye hi "light mode nahi ho raha" wala symptom hai).
+    if (!themeToggleBtn.dataset.themeBound) {
+      themeToggleBtn.dataset.themeBound = 'true';
 
-      try {
-        localStorage.setItem('fa-dark-mode', isDark ? 'true' : 'false');
-      } catch (e) {
-        /* localStorage unavailable, ignore */
-      }
+      themeToggleBtn.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        var isDark = document.body.classList.contains('dark-mode');
 
-      setThemeIcon(isDark);
-    });
-  }
+        try {
+          localStorage.setItem('fa-dark-mode', isDark ? 'true' : 'false');
+        } catch (e) {
+          /* localStorage unavailable, ignore */
+        }
 
-  // ==========================
-  // Student Portal — "Coming Soon" popup
-  // ==========================
-  var portalBtns = document.querySelectorAll('.nav-portal-btn');
-
-  if (portalBtns.length) {
-    var portalToast = document.createElement('div');
-    portalToast.className = 'portal-toast';
-    portalToast.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Student Portal is coming soon &mdash; stay tuned!';
-    document.body.appendChild(portalToast);
-
-    var portalToastTimer = null;
-
-    portalBtns.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        portalToast.classList.remove('show');
-        // force reflow so the animation restarts on repeated clicks
-        void portalToast.offsetWidth;
-        portalToast.classList.add('show');
-
-        clearTimeout(portalToastTimer);
-        portalToastTimer = setTimeout(function () {
-          portalToast.classList.remove('show');
-        }, 3200);
+        setThemeIcon(isDark);
       });
-    });
+    }
   }
 
 });
