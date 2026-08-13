@@ -3380,3 +3380,17 @@ body.dark-mode .office-hours-table tr {
   background-color: var(--fa-surface) !important;
   border-color: var(--fa-card-border) !important;
 }
+
+/* ---- Fix: form success/error messages invisible in dark mode ---- */
+body.dark-mode .contact-form-success {
+  background-color: rgba(46, 204, 113, 0.12) !important;
+  border-left-color: #6fe3a0 !important;
+  color: #6fe3a0 !important;
+}
+
+body.dark-mode #enquiryErrorMsg,
+body.dark-mode .contact-form-card .alert-danger {
+  background-color: rgba(220, 53, 69, 0.15) !important;
+  border-color: rgba(220, 53, 69, 0.4) !important;
+  color: #ff8a8a !important;
+}

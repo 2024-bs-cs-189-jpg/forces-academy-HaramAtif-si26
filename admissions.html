@@ -499,7 +499,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
   (function () {
-    emailjs.init({ publicKey: "YOUR_PUBLIC_KEY" }); // from EmailJS → Account → General
+    emailjs.init({ publicKey: "6o-RFO-qu_qv_6AlU" });
   })();
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -525,7 +525,7 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+      emailjs.sendForm('service_g6fueu9', 'template_juy48h6', form)
         .then(function () {
           successMsg.classList.add('show');
           form.reset();
