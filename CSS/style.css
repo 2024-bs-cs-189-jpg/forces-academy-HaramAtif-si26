@@ -705,6 +705,8 @@ body.dark-mode .announcement-date {
   text-decoration: none;
   font-size: 0.92rem;
   transition: color 0.2s ease;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .footer-links li {
@@ -1545,6 +1547,22 @@ body.dark-mode .announcement-date {
   gap: 1rem;
   align-items: flex-start;
   height: 100%;
+}
+
+/* FIX: long unbroken strings (like the email address) were pushing
+   past the card edge. Flex items default to min-width: auto, which
+   stops them shrinking below their content's natural width — so a
+   long word just overflows instead of wrapping. Letting this column
+   shrink, plus breaking long words, keeps everything inside the card. */
+.contact-info-card > div:last-child {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.contact-info-card p,
+.contact-info-card h6 {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .contact-info-icon {

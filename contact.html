@@ -121,13 +121,13 @@
               <div class="contact-info-icon"><i class="bi bi-clock-fill"></i></div>
               <div>
                 <h6 class="fw-bold mb-1">Office Hours</h6>
-                <p class="mb-0 small">Mon &ndash; Sat: 9 AM &ndash; 6 PM</p>
+                <p class="mb-0 small">Mon &ndash; Fri: 9 AM &ndash; 6 PM<br>Sat: 9 AM &ndash; 4 PM</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- NEW FEATURE 1: Live online/offline status badge -->
+        <!-- Live online/offline status badge -->
         <div class="text-center mt-4">
           <span class="chat-status-badge" id="chatStatusBadge">
             <span class="chat-status-dot"></span>
@@ -149,26 +149,29 @@
                 <i class="bi bi-check-circle-fill me-2"></i>
                 Thank you! Your message has been received. Our admissions team will contact you shortly.
               </div>
+              <div class="alert alert-danger d-none" id="formErrorMsg" role="alert">
+                Sorry, something went wrong sending your message. Please try again or call us directly.
+              </div>
               <form id="contactForm" novalidate>
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label for="fullName" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="fullName" required />
+                    <input type="text" class="form-control" id="fullName" name="from_name" required />
                     <div class="invalid-feedback">Please enter your name.</div>
                   </div>
                   <div class="col-md-6">
                     <label for="phoneNumber" class="form-label">Phone Number</label>
-                    <input type="tel" class="form-control" id="phoneNumber" placeholder="03XX-XXXXXXX" required />
+                    <input type="tel" class="form-control" id="phoneNumber" name="phone" placeholder="03XX-XXXXXXX" required />
                     <div class="invalid-feedback">Please enter a valid phone number.</div>
                   </div>
                   <div class="col-md-6">
                     <label for="emailAddress" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="emailAddress" required />
+                    <input type="email" class="form-control" id="emailAddress" name="from_email" required />
                     <div class="invalid-feedback">Please enter a valid email address.</div>
                   </div>
                   <div class="col-md-6">
                     <label for="inquirySubject" class="form-label">Subject</label>
-                    <select class="form-select" id="inquirySubject" required>
+                    <select class="form-select" id="inquirySubject" name="subject" required>
                       <option value="" selected disabled>Choose one</option>
                       <option value="Admissions">Admissions Inquiry</option>
                       <option value="Fee">Fee &amp; Payment</option>
@@ -180,11 +183,11 @@
                   </div>
                   <div class="col-12">
                     <label for="messageBody" class="form-label">Message</label>
-                    <textarea class="form-control" id="messageBody" rows="5" required></textarea>
+                    <textarea class="form-control" id="messageBody" name="message" rows="5" required></textarea>
                     <div class="invalid-feedback">Please enter your message.</div>
                   </div>
                   <div class="col-12">
-                    <button type="submit" class="btn btn-portal fw-semibold px-4">
+                    <button type="submit" class="btn btn-portal fw-semibold px-4" id="contactSubmitBtn">
                       Send Message
                     </button>
                   </div>
@@ -232,7 +235,7 @@
       </div>
     </section>
 
-    <!-- NEW FEATURE 3: Contact-specific FAQ accordion -->
+    <!-- Contact-specific FAQ accordion -->
     <section id="contact-faq" class="py-6" style="background-color: var(--fa-surface);">
       <div class="container">
         <div class="text-center mb-5">
@@ -325,7 +328,7 @@
           <h6 class="fw-bold mb-3">Contact Us</h6>
           <ul class="list-unstyled footer-links">
             <li><i class="bi bi-geo-alt-fill me-2"></i>Faisalabad, Punjab, Pakistan</li>
-            <li><i class="bi bi-clock-fill me-2"></i>Mon &ndash; Sat: 9:00 AM &ndash; 6:00 PM</li>
+            <li><i class="bi bi-clock-fill me-2"></i>Mon &ndash; Fri: 9 AM &ndash; 6 PM, Sat: 9 AM &ndash; 4 PM</li>
             <li><i class="bi bi-telephone-fill me-2"></i>+92 300 0000000</li>
             <li><i class="bi bi-envelope-fill me-2"></i>info@forcesacademy.edu.pk</li>
           </ul>
@@ -341,40 +344,61 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+    (function () {
+      emailjs.init({ publicKey: "6o-RFO-qu_qv_6AlU" });
+    })();
+
     document.addEventListener('DOMContentLoaded', function () {
       var form = document.getElementById('contactForm');
       var successMsg = document.getElementById('formSuccessMsg');
+      var errorMsg = document.getElementById('formErrorMsg');
+      var submitBtn = document.getElementById('contactSubmitBtn');
 
       if (!form) return;
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         e.stopPropagation();
+        successMsg.classList.remove('show');
+        errorMsg.classList.add('d-none');
 
         if (!form.checkValidity()) {
           form.classList.add('was-validated');
-          successMsg.classList.remove('show');
           return;
         }
 
         form.classList.remove('was-validated');
-        successMsg.classList.add('show');
-        form.reset();
 
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
 
-        setTimeout(function () {
-          successMsg.classList.remove('show');
-        }, 6000);
+        emailjs.sendForm('service_g6fueu9', 'template_juy48h6', form)
+          .then(function () {
+            successMsg.classList.add('show');
+            form.reset();
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(function () { successMsg.classList.remove('show'); }, 6000);
+          })
+          .catch(function (err) {
+            console.error('EmailJS error:', err);
+            errorMsg.classList.remove('d-none');
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          });
       });
     });
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
   <script>
-    // NEW: Live "We're Online / Offline" status badge
+    // Live "We're Online / Offline" status badge
     document.addEventListener('DOMContentLoaded', function () {
       var badge = document.getElementById('chatStatusBadge');
       var text = document.getElementById('chatStatusText');
@@ -385,7 +409,12 @@
       var day = now.getDay(); // 0 = Sunday ... 6 = Saturday
       var hour = now.getHours();
       var isSaturday = day === 6;
-      var closeHour = isSaturday ? 18 : 18; // 9 AM - 6 PM Mon-Sat per office hours
+      // FIX: office hours are Mon–Fri 9 AM–6 PM, but Saturday closes
+      // earlier at 4 PM (see office-hours-table below). The old code
+      // used "isSaturday ? 18 : 18" — both branches were 18, so the
+      // badge kept saying "online" on Saturday evenings when the
+      // academy was actually already closed.
+      var closeHour = isSaturday ? 16 : 18;
       var isOpen = day !== 0 && hour >= 9 && hour < closeHour;
 
       if (isOpen) {
