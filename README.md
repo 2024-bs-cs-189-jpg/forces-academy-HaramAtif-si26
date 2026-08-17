@@ -9,7 +9,7 @@ This project was built as part of the **Code Saviours SI-26** internship program
 ## Live Site
 
 **[View Live Website →](https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/)**
-**[Student Portal (LMS) →](https://forces-academy-lms.infinityfreeapp.com/)** *(built by the Full Stack track teammate)*
+**[Student Portal (LMS) →](https://forces-academy.infy.click/)
 
 ---
 
