@@ -2,21 +2,27 @@
 
 A complete, responsive multi-page website built for **Forces Academy Faisalabad**, a defence forces preparation academy offering Army, Air Force & Navy entry-test coaching, ISSB interview grooming, and academic (Matric/FSc) programs in Faisalabad, Pakistan.
 
-This project was built as part of the **Code Saviours SI-26** internship program (Frontend Track), covering real-world frontend development: multi-page architecture, responsive design, interactive UI components, and client-side data handling — all without a backend, using static HTML/CSS/JS + Bootstrap 5.
+This project was built as part of the **Code Saviours SI-26** internship program (Frontend Track), covering real-world frontend development: multi-page architecture, responsive design, interactive UI components, client-side data handling, and real email delivery via a third-party API — all without a custom backend, using static HTML/CSS/JS + Bootstrap 5.
 
 ---
 
 ## Live Site
 
 **[View Live Website →](https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/)**
+**[Student Portal (LMS) →](https://forces-academy-lms.infinityfreeapp.com/)** *(built by the Full Stack track teammate)*
 
 ---
 
 ## Screenshots
 
-| Home Page | About Page | Results Page |
-|---|---|---|
-| ![Home Page](./images/home.png) | ![About Page](./images/about.png) | ![Results Page](./images/results.png) |
+| Home Page | About Page |
+|---|---|
+| ![Home Page](./images/home.png) | ![About Page](./images/about.png) |
+
+| Results Page | Gallery Page |
+|---|---|
+| ![Results Page](./images/results.png) | ![Gallery Page](./images/gallery.png) |
+
 > Screenshots are stored in the `/images` folder in the project root.
 
 ---
@@ -28,6 +34,7 @@ This project was built as part of the **Code Saviours SI-26** internship program
 - **Bootstrap 5.3** — grid system, components (navbar, accordion, carousel, forms)
 - **Bootstrap Icons** — iconography throughout the site
 - **JavaScript (Vanilla)** — no frameworks; all interactivity hand-written (`js/main.js`)
+- **EmailJS** — sends real emails from the Admissions enquiry form directly from the browser, with no custom backend
 - **Google Fonts** — Playfair Display (headings) + Inter (body text)
 - **GLightbox** — lightbox gallery viewer (Gallery page)
 - **GitHub Pages** — static site hosting
@@ -38,7 +45,8 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 **Site-wide**
 - Fully responsive design (tested at 375px / 768px / 1440px)
-- Sticky navbar with active-page highlighting and a visually distinct **Student Portal** button (gold outline pill) that shows a "Coming Soon" popup on click
+- Sticky navbar with active-page highlighting and a **Student Portal** button (gold outline pill) linking out to the hosted LMS
+- Dark mode toggle with saved preference (`localStorage`)
 - Floating WhatsApp & Call quick-contact buttons
 - Smooth scroll behavior + floating "Back to Top" button
 - Page fade-in and scroll-reveal animations on all sections
@@ -48,6 +56,7 @@ This project was built as part of the **Code Saviours SI-26** internship program
 - Hero section with CTA buttons
 - Animated stats counter (students, years, courses, success rate)
 - Selection process step tracker + scrolling course ticker
+- Latest Announcements section (3 cards: Admissions Open, Result Announcement, New Batch Starting)
 - Testimonials carousel with custom-styled navigation arrows and dots
 - "Next Batch Starts In" live countdown timer
 
@@ -67,6 +76,7 @@ This project was built as part of the **Code Saviours SI-26** internship program
 - Eligibility criteria cards
 - Live seat availability progress bars
 - Interactive document checklist tracker (saves progress via `localStorage`)
+- **Admission enquiry form that sends real emails via EmailJS** — client-side validated, with success/error states
 - Full fee structure table
 - Important dates timeline
 
@@ -87,8 +97,8 @@ This project was built as part of the **Code Saviours SI-26** internship program
 
 **Contact**
 - Contact info cards
-- Live "We're Online/Offline" status badge (based on office hours)
-- Validated contact form with success confirmation
+- Live "We're Online/Offline" status badge (calculated from real office hours: Mon–Fri 9 AM–6 PM, Sat 9 AM–4 PM)
+- Validated contact form
 - Static "Open in Google Maps" card (kept lightweight — no embedded iframe, so the page loads in a single request)
 - Office hours table
 - Contact-specific FAQ accordion
@@ -111,7 +121,8 @@ forces-academy-HaramAtif-si26/
 ├── images/
 │   ├── home.png
 │   ├── about.png
-│   └── results.png
+│   ├── results.png
+│   └── gallery.png
 ├── js/
 │   └── main.js
 └── README.md
@@ -130,6 +141,12 @@ forces-academy-HaramAtif-si26/
    npx serve .
    ```
 3. Navigate between pages using the navbar.
+
+### EmailJS setup (if you fork this)
+The Admissions enquiry form uses EmailJS to send real emails without a backend. To use your own:
+1. Create a free account at [emailjs.com](https://www.emailjs.com/)
+2. Set up an Email Service and a Template
+3. Replace the public key, service ID, and template ID in `admissions.html`'s inline script with your own credentials
 
 ---
 
