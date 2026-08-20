@@ -1,15 +1,13 @@
 # Forces Academy Faisalabad — Website
 
-A complete, responsive multi-page website built for **Forces Academy Faisalabad**, a defence forces preparation academy offering Army, Air Force & Navy entry-test coaching, ISSB interview grooming, and academic (Matric/FSc) programs in Faisalabad, Pakistan.
-
-This project was built as part of the **Code Saviours SI-26** internship program (Frontend Track), covering real-world frontend development: multi-page architecture, responsive design, interactive UI components, client-side data handling, and real email delivery via a third-party API — all without a custom backend, using static HTML/CSS/JS + Bootstrap 5.
+A responsive, multi-page website for **Forces Academy Faisalabad**, a defence-forces coaching academy in Faisalabad, Pakistan — built with HTML5, CSS3, Bootstrap 5, and vanilla JavaScript, featuring a custom green-and-gold design system, full dark mode, and real email delivery via EmailJS (no backend server).
 
 ---
 
 ## Live Site
 
-**[View Live Website →](https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/)**
-**[Student Portal (LMS) →](https://forces-academy.infy.click/)
+- **Website:** [https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/](https://2024-bs-cs-189-jpg.github.io/forces-academy-HaramAtif-si26/)
+- **Student Portal (LMS):** [https://forces-academy.infy.click/](https://forces-academy.infy.click/) *(built by the Full Stack track teammate)*
 
 ---
 
@@ -23,85 +21,56 @@ This project was built as part of the **Code Saviours SI-26** internship program
 |---|---|
 | ![Results Page](./images/results.png) | ![Gallery Page](./images/gallery.png) |
 
-> Screenshots are stored in the `/images` folder in the project root.
-
 ---
 
 ## Tech Stack
 
 - **HTML5** — semantic, multi-page structure (7 pages)
-- **CSS3** — custom stylesheet (`CSS/style.css`) with CSS variables, responsive breakpoints (1440px / 768px / 375px), and animations
-- **Bootstrap 5.3** — grid system, components (navbar, accordion, carousel, forms)
+- **CSS3** — custom stylesheet with CSS variables, responsive breakpoints (1440px / 768px / 375px), and animations
+- **Bootstrap 5.3** — grid system and components (navbar, accordion, carousel, forms)
 - **Bootstrap Icons** — iconography throughout the site
-- **JavaScript (Vanilla)** — no frameworks; all interactivity hand-written (`js/main.js`)
-- **EmailJS** — sends real emails from the Admissions enquiry form directly from the browser, with no custom backend
+- **JavaScript (Vanilla)** — no frameworks; all interactivity hand-written
+- **EmailJS** — sends real emails from the Admissions enquiry form directly from the browser
+- **GLightbox** — lightbox photo viewer on the Gallery page
 - **Google Fonts** — Playfair Display (headings) + Inter (body text)
-- **GLightbox** — lightbox gallery viewer (Gallery page)
-- **GitHub Pages** — static site hosting
+- **GitHub Pages** — deployment and hosting
 
 ---
 
 ## Features
 
-**Site-wide**
-- Fully responsive design (tested at 375px / 768px / 1440px)
-- Sticky navbar with active-page highlighting and a **Student Portal** button (gold outline pill) linking out to the hosted LMS
-- Dark mode toggle with saved preference (`localStorage`)
-- Floating WhatsApp & Call quick-contact buttons
-- Smooth scroll behavior + floating "Back to Top" button
-- Page fade-in and scroll-reveal animations on all sections
-- Custom inline SVG favicon
+- Fully responsive design for desktop, tablet, and mobile
+- Custom green-and-gold defence-academy color theme, with a complete dark mode (saved via `localStorage`)
+- Sticky navbar with active-page highlighting and a responsive mobile menu
+- Animated hero section, scroll-reveal entrance animations, and animated statistics counters
+- Latest Announcements section and testimonials carousel on the homepage
+- Course cards with a side-by-side comparison table
+- Full admissions flow: eligibility, live seat availability, a document checklist tracker, and a fee structure table
+- **Live admission enquiry form that sends real email via EmailJS** — no backend required
+- Searchable, filterable results table with CSV export and a print-friendly view
+- Campus gallery with category filters, live search, grid/list toggle, and a lightbox viewer
+- Contact page with a live "We're Online / Offline" status badge based on real office hours
+- Consistent navbar and footer, SEO-friendly meta information, and a custom SVG favicon across all pages
 
-**Home**
-- Hero section with CTA buttons
-- Animated stats counter (students, years, courses, success rate)
-- Selection process step tracker + scrolling course ticker
-- Latest Announcements section (3 cards: Admissions Open, Result Announcement, New Batch Starting)
-- Testimonials carousel with custom-styled navigation arrows and dots
-- "Next Batch Starts In" live countdown timer
+---
 
-**About**
-- Academy history timeline (2011–2026)
-- Mission & Vision cards
-- Achievements/awards grid
-- Leadership team profiles
+## Responsive Design
 
-**Courses**
-- Course cards grid with tags
-- Side-by-side course comparison table
-- Batch timing selector (Morning/Evening/Weekend) with live result panel
+Tested at three breakpoints — **375px** (mobile), **768px** (tablet), and **1440px** (desktop). The navbar collapses into a hamburger menu and grids reflow to a single column on smaller screens.
 
-**Admissions**
-- Step-by-step "How to Apply" guide
-- Eligibility criteria cards
-- Live seat availability progress bars
-- Interactive document checklist tracker (saves progress via `localStorage`)
-- **Admission enquiry form that sends real emails via EmailJS** — client-side validated, with success/error states
-- Full fee structure table
-- Important dates timeline
+---
 
-**Results**
-- Summary stat cards (total, selected, qualified, success rate)
-- Top position holders showcase with photos and a gold highlight for 1st place
-- Year-on-year batch comparison bars (2026 vs 2025 vs 2024 vs 2023 batches)
-- Searchable & filterable results table (by name, course, year, status)
-- Export to CSV + print-friendly view
+## Website Pages
 
-**Gallery**
-- Category filter tabs (Events / Sports / Academic) with live counts
-- Live caption search
-- Grid/List view toggle
-- "Surprise Me" random photo shuffle
-- Like button per photo
-- Lightbox full-size photo viewer (GLightbox)
-
-**Contact**
-- Contact info cards
-- Live "We're Online/Offline" status badge (calculated from real office hours: Mon–Fri 9 AM–6 PM, Sat 9 AM–4 PM)
-- Validated contact form
-- Static "Open in Google Maps" card (kept lightweight — no embedded iframe, so the page loads in a single request)
-- Office hours table
-- Contact-specific FAQ accordion
+| Page | Description |
+|---|---|
+| **Home** | Hero section, animated stats, announcements, testimonials, batch countdown |
+| **About** | Academy history timeline, mission & vision, achievements, leadership team |
+| **Courses** | Course cards, comparison table, batch-timing selector |
+| **Admissions** | Eligibility, seat availability, document tracker, live enquiry form (EmailJS), fees |
+| **Results** | Top achievers, batch comparison, filterable results table, CSV export |
+| **Gallery** | Filterable, searchable photo gallery with lightbox viewer |
+| **Contact** | Contact info, live office-hours status badge, contact form, FAQ |
 
 ---
 
@@ -132,25 +101,18 @@ forces-academy-HaramAtif-si26/
 
 ## Running Locally
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/2024-bs-cs-189-jpg/forces-academy-HaramAtif-si26.git
-   ```
-2. Open `index.html` directly in your browser, **or** serve it with a local server (recommended, avoids CORS/localStorage quirks):
-   ```bash
-   npx serve .
-   ```
-3. Navigate between pages using the navbar.
+```bash
+git clone https://github.com/2024-bs-cs-189-jpg/forces-academy-HaramAtif-si26.git
+cd forces-academy-HaramAtif-si26
+```
 
-### EmailJS setup (if you fork this)
-The Admissions enquiry form uses EmailJS to send real emails without a backend. To use your own:
-1. Create a free account at [emailjs.com](https://www.emailjs.com/)
-2. Set up an Email Service and a Template
-3. Replace the public key, service ID, and template ID in `admissions.html`'s inline script with your own credentials
+Open `index.html` directly in your browser, or serve it locally (e.g. the VS Code Live Server extension) for the best experience.
+
+**EmailJS:** the Admissions form is wired to this project's own EmailJS account. To reuse the form elsewhere, create a free account at [emailjs.com](https://www.emailjs.com/) and swap in your own public key, service ID, and template ID inside `admissions.html`.
 
 ---
 
-##  Built By
+## Built By
 
-**Built by:** Haram Atif  
-**Code Saviours SI-26 | 2026**
+**Haram Atif**
+Code Saviours — SI-26 Frontend Track | 2026
