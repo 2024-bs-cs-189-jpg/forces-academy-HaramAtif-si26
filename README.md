@@ -91,6 +91,9 @@ forces-academy-HaramAtif-si26/
 │   ├── home.png
 │   ├── about.png
 │   ├── results.png
+│   ├── admissions.png
+│   ├── contact.png
+│   ├── courses.png
 │   └── gallery.png
 ├── js/
 │   └── main.js
