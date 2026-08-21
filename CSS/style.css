@@ -3412,3 +3412,43 @@ body.dark-mode .contact-form-card .alert-danger {
   border-color: rgba(220, 53, 69, 0.4) !important;
   color: #ff8a8a !important;
 }
+
+/* ---------- Week 7: animation coverage for Apply / How-it-works / Selection steps / Admission support ---------- */
+.apply-step,
+.how-it-works-step,
+.selection-step,
+.admission-support-card {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.apply-step.is-visible,
+.how-it-works-step.is-visible,
+.selection-step.is-visible,
+.admission-support-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger the apply steps + how-it-works steps slightly for a nicer cascade */
+.apply-steps-list .apply-step:nth-child(1).is-visible { transition-delay: 0s; }
+.apply-steps-list .apply-step:nth-child(2).is-visible { transition-delay: 0.08s; }
+.apply-steps-list .apply-step:nth-child(3).is-visible { transition-delay: 0.16s; }
+.apply-steps-list .apply-step:nth-child(4).is-visible { transition-delay: 0.24s; }
+.apply-steps-list .apply-step:nth-child(5).is-visible { transition-delay: 0.32s; }
+
+#how-it-works .how-it-works-step:nth-child(1).is-visible { transition-delay: 0s; }
+#how-it-works .how-it-works-step:nth-child(2).is-visible { transition-delay: 0.12s; }
+#how-it-works .how-it-works-step:nth-child(3).is-visible { transition-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .apply-step,
+  .how-it-works-step,
+  .selection-step,
+  .admission-support-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
